@@ -1,0 +1,30 @@
+import { Meta, Primary, Canvas, Controls } from "@storybook/blocks"
+
+import * as Story from "./Typography.stories.ts"
+
+<Meta of={Story} />
+
+# Typography
+
+This is a Typography component.
+
+### Title H1
+
+<Canvas of={Story.TextHeadingH1} layout="centered" />
+
+### Title H2
+
+<Canvas of={Story.TextHeadingH2} layout="centered" />
+
+### Title H3
+
+<Canvas of={Story.TextHeadingH3} layout="centered" />
+
+### Paragraph
+
+<Canvas of={Story.TextParagraph} layout="centered" />
+
+### Interactive
+
+<Primary />
+<Controls />

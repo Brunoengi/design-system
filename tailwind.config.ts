@@ -10,6 +10,16 @@ const config: Config = {
     fontFamily: {
       sans: ['Roboto',]
     },
+    fontSize: {
+      xs: "var(--text-xs)",
+      sm: "var(--text-sm)",
+      md: "var(--text-md)",
+      lg: "var(--text-lg)",
+      xl: "var(--text-xl)",
+      tmd: "var(--title-md)",
+      tlg: "var(--title-lg)",
+      txl: "var(--title-xl)",
+    },
     extend: {
       colors: {
         primary: 'rgba(var(--primary), <alpha-value>)',
