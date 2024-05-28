@@ -25,16 +25,16 @@
   --bg-disabled: 200, 200, 200;
 
    /* Font Size */
-   --text-xs: 12px;
-   --text-sm: 14px;
-   --text-md: 16px;
-   --text-lg: 18px;
-   --text-xl: 20px;
+--text-xs: 12px;
+    --text-sm: 14px;
+    --text-md: 16px;
+    --text-lg: 18px;
+    --text-xl: 20px;
 
-   /* Title Font Size */
-   --title-md: 40px;
-   --title-lg: 48px;
-   --title-xl: 56px;
+    /* Title Font Size */
+    --title-md: 40px;
+    --title-lg: 48px;
+    --title-xl: 56px;
  }
   
   .theme-pink {
