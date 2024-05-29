@@ -20,9 +20,19 @@
   --primary: 255, 255, 255;
   --secondary: 200, 200, 200;
 
+  /* Status Colors */
+  --status-sucess: 0, 200, 81
+  --status-sucess-dark: 0, 126, 51
+  --status-warning: 255, 187, 51
+  --status-warning-dark: 255, 136, 0
+  --status-danger: 255, 68, 68
+  --status-danger-dark: 
+
   --bg-dark: 0, 0, 0;
   --bg-light: 80, 80, 80; 
   --bg-disabled: 200, 200, 200;
+
+
 
    /* Font Size */
     --text-xs: 12px;
