@@ -1,22 +1,41 @@
-export type ButtonProps = {
-  children: React.ReactNode;
-  variant?: 'primary' | 'secondary';
-} & React.ButtonHTMLAttributes<HTMLButtonElement>;
+import {cva, type VariantProps} from "class-variance-authority"
+import classNames from "classnames";
 
-function getVariant(variant: ButtonProps['variant'], disabled: ButtonProps['disabled']) {
-  switch (variant) {
-    case 'primary':
-      return disabled ? 'bg-disabled text-primary' : 'bg-dark text-primary'
-    case 'secondary':
-      return disabled ? 'bg-disabled text-primary' : 'bg-light text-primary'
-    default:
-      return disabled ? 'text-disabled' : 'text-primary'
-  }
+const colorVariantsMap = {
+  primary: 'dark',
+  secondary: 'light'
 }
 
-const Button = ({ variant = 'primary', children, className, disabled, ...rest }: ButtonProps) => {
+const ButtonVariants = cva(['text-primary', 'rounded-sm', 'px-6', 'py-2'], {
+  variants: {
+      colorType: {
+        primary: `bg-${colorVariantsMap['primary']}`,
+        secondary: `bg-${colorVariantsMap['secondary']}`,
+        disabled: 'bg-disabled'
+      },
+    kind: {
+      solid: '',
+      outline: `bg-opacity-0 border-2 border-gray-500 text-gray-500`,
+    }
+  },
+  defaultVariants: {
+    colorType: 'primary',
+    kind: 'solid'
+  }
+})
+
+export type ButtonProps = VariantProps<typeof ButtonVariants> & {
+  children: React.ReactNode;
+  colorType?: 'primary' | 'secondary' | 'disabled';
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;
+
+
+const Button = ({ children, className, disabled = false, ...rest }: ButtonProps) => {
+  
   return <button
-    className={`hover:contrast-150 rounded-sm px-6 py-2 ${getVariant(variant, disabled)} ${className}`}
+    className={` ${classNames({
+      'hover:contrast-150' : `${disabled!}`,
+    })} ${ButtonVariants(rest)} ${className}`}
     disabled={disabled}
     {...rest}
   >

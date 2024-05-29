@@ -25,7 +25,7 @@
   --bg-disabled: 200, 200, 200;
 
    /* Font Size */
---text-xs: 12px;
+    --text-xs: 12px;
     --text-sm: 14px;
     --text-md: 16px;
     --text-lg: 18px;
@@ -38,11 +38,16 @@
  }
   
   .theme-pink {
-    --primary: 255, 255, 255;
-    --secondary: 200, 200, 200;
-
     --bg-dark: 190, 40, 100;
     --bg-light: 255, 40, 100; 
+  }
+
+  .theme-vintage {
+    --very-dark: 50, 44, 43;
+    --dark: 128, 61, 59;
+    --middle: 175, 130, 96;
+    --light: 228, 197, 158;
+    --very-light: 228, 197, 220;
   }
 }
 

@@ -23,14 +23,16 @@ export default meta
 export const PrimaryDark: StoryObj<ButtonProps> = {
   args: {
     children: 'Calcular',
-    variant: 'primary'
+    colorType: 'primary',
+    kind:'solid'
   }
 }
 
 export const SecondaryDark: StoryObj<ButtonProps> = {
   args: {
     children: 'Calcular',
-    variant: 'secondary'
+    colorType: 'secondary',
+    kind:'solid'
   }
 }
 
@@ -38,14 +40,15 @@ export const DisabledPrimaryDark: StoryObj<ButtonProps> = {
   args: {
     children: 'Calcular',
     disabled: true,
-    variant: 'primary'
+    colorType: "disabled",
+    className: 'default disabled'
   }
 }
 
 export const PrimaryPink: StoryObj<ButtonProps> = {
   args: {
     children: 'Calcular',
-    variant: 'primary',
+    colorType: 'primary',
     className:'theme-pink'
   }
 }
@@ -53,7 +56,7 @@ export const PrimaryPink: StoryObj<ButtonProps> = {
 export const SecondaryPink: StoryObj<ButtonProps> = {
   args: {
     children: 'Calcular',
-    variant: 'secondary',
+    colorType: 'secondary',
     className:'theme-pink'
   }
 }
