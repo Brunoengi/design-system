@@ -1,16 +1,11 @@
 import {cva, type VariantProps} from "class-variance-authority"
 import classNames from "classnames";
 
-const colorVariantsMap = {
-  primary: 'dark',
-  secondary: 'light'
-}
-
-const ButtonVariants = cva(['text-primary', 'rounded-sm', 'px-6', 'py-2'], {
+const ButtonVariants = cva(['text-white', 'rounded-sm', 'px-6', 'py-2'], {
   variants: {
       colorType: {
-        primary: `bg-${colorVariantsMap['primary']}`,
-        secondary: `bg-${colorVariantsMap['secondary']}`,
+        primary: 'bg-very-dark',
+        secondary: 'bg-dark',
         disabled: 'bg-disabled'
       },
     kind: {
@@ -34,7 +29,7 @@ const Button = ({ children, className, disabled = false, ...rest }: ButtonProps)
   
   return <button
     className={` ${classNames({
-      'hover:contrast-150' : `${disabled!}`,
+      'hover:contrast-150' : `${rest.colorType !== 'disabled'}`,
     })} ${ButtonVariants(rest)} ${className}`}
     disabled={disabled}
     {...rest}

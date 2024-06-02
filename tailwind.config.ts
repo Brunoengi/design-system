@@ -21,13 +21,12 @@ const config: Config = {
       txl: "var(--title-xl)",
     },
     extend: {
-      colors: {
-        primary: 'rgba(var(--primary), <alpha-value>)',
-        secondary: 'rgba(var(--secondary), <alpha-value>)',
-      },
       backgroundColor: {
-        light: 'rgba(var(--bg-light), <alpha-value>)',
+        'very-dark': 'rgba(var(--bg-very-dark), <alpha-value>)',
         dark: 'rgba(var(--bg-dark), <alpha-value>)',
+        middle: 'rgba(var(--bg-middle), <alpha-value>)',
+        light: 'rgba(var(--bg-light), <alpha-value>)',
+        'very-light': 'rgba(var(--bg-very-light), <alpha-value>)',
         disabled: 'rgba(var(--bg-disabled), <alpha-value>)',
       },
       boxShadow: {

@@ -23,7 +23,6 @@ export default meta
 export const PrimaryDark: StoryObj<ButtonProps> = {
   args: {
     children: 'Calcular',
-    colorType: 'primary',
     kind:'solid'
   }
 }
