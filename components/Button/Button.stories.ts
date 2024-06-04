@@ -12,6 +12,16 @@ const meta: Meta<ButtonProps> = {
     disabled: {
       type: "boolean"
     },
+    colorType: {
+      control: {
+        type: "select"
+      }
+    },
+    size: {
+      control: {
+        type: "select"
+      }
+    },
     className: {
       type: "string"
     },
@@ -20,10 +30,15 @@ const meta: Meta<ButtonProps> = {
 
 export default meta
 
+export const Primary: StoryObj<ButtonProps> = {
+  args: {
+    children: 'Calcular',
+  }
+}
+
 export const PrimaryDark: StoryObj<ButtonProps> = {
   args: {
     children: 'Calcular',
-    kind:'solid'
   }
 }
 
@@ -31,7 +46,6 @@ export const SecondaryDark: StoryObj<ButtonProps> = {
   args: {
     children: 'Calcular',
     colorType: 'secondary',
-    kind:'solid'
   }
 }
 
@@ -57,6 +71,22 @@ export const SecondaryPink: StoryObj<ButtonProps> = {
     children: 'Calcular',
     colorType: 'secondary',
     className:'theme-pink'
+  }
+}
+
+export const PrimaryVintage: StoryObj<ButtonProps> = {
+  args: {
+    children: 'Calcular',
+    colorType: 'primary',
+    className:'theme-vintage'
+  }
+}
+
+export const SecondaryVintage: StoryObj<ButtonProps> = {
+  args: {
+    children: 'Calcular',
+    colorType: 'secondary',
+    className:'theme-vintage'
   }
 }
 

@@ -1,5 +1,14 @@
 import type { Config } from "tailwindcss";
 
+const themeColors = {
+  'very-dark': 'rgba(var(--very-dark), <alpha-value>)',
+  dark: 'rgba(var(--dark), <alpha-value>)',
+  middle: 'rgba(var(--middle), <alpha-value>)',
+  light: 'rgba(var(--light), <alpha-value>)',
+  'very-light': 'rgba(var(--very-light), <alpha-value>)',
+  disabled: 'rgba(var(--status-disabled), <alpha-value>)',
+}
+
 const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,7 +17,7 @@ const config: Config = {
   ],
   theme: {
     fontFamily: {
-      sans: ['Roboto',]
+      sans: ['Roboto']
     },
     fontSize: {
       xs: "var(--text-xs)",
@@ -21,14 +30,10 @@ const config: Config = {
       txl: "var(--title-xl)",
     },
     extend: {
-      backgroundColor: {
-        'very-dark': 'rgba(var(--bg-very-dark), <alpha-value>)',
-        dark: 'rgba(var(--bg-dark), <alpha-value>)',
-        middle: 'rgba(var(--bg-middle), <alpha-value>)',
-        light: 'rgba(var(--bg-light), <alpha-value>)',
-        'very-light': 'rgba(var(--bg-very-light), <alpha-value>)',
-        disabled: 'rgba(var(--bg-disabled), <alpha-value>)',
-      },
+      borderColor: themeColors,
+      textColor: themeColors,
+      colors: themeColors,
+      backgroundColor: themeColors,
       boxShadow: {
         sm: 'var(--shadow-sm)',
         md: 'var(--shadow-md)',
@@ -51,3 +56,4 @@ const config: Config = {
   plugins: [],
 };
 export default config;
+

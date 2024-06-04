@@ -24,20 +24,17 @@
   --status-warning: 255, 187, 51;
   --status-warning-dark: 255, 136, 0;
   --status-danger: 255, 68, 68;
+  --status-disabled: 140, 140, 140;
 
   /*Theme Color Background*/
-  --bg-veryDark: 0, 0, 0;
-  --bg-dark: 20, 20, 20;
-  --bg-light: 80, 80, 80; 
-  --bg-disabled: 200, 200, 200;
+  --very-dark: 0, 0, 0;
+  --dark: 40, 40, 40;
+  --middle: 80, 80, 80;
+  --light: 120, 120, 120; 
+  --very-light: 150, 150, 150;
 
-  --bg-very-dark: 0, 0, 0;
-  --bg-dark: 40, 40, 40;
-  --bg-middle: 80, 80, 80;
-  --bg-light: 120, 120, 120; 
-  --bg-very-light: 150, 150, 150;
-
-
+  /*Theme color Text*/
+ 
    /* Font Size */
     --text-xs: 12px;
     --text-sm: 14px;
@@ -52,13 +49,13 @@
  }
   
   .theme-pink {
-    --bg-very-dark: 190, 40, 100;
-    --bg-dark: 255, 40, 100; 
+    --very-dark: 190, 40, 100;
+    --dark: 255, 40, 100; 
   }
 
   .theme-vintage {
-    --bg-very-dark: 50, 44, 43;
-    --bg-dark: 128, 61, 59;
+    --very-dark: 50, 44, 43;
+    --dark: 128, 61, 59;
     --bg-middle: 175, 130, 96;
     --bg-light: 228, 197, 158;
     --bg-very-light: 228, 197, 220;

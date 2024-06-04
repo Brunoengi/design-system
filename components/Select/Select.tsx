@@ -1,6 +1,13 @@
 import {cva, type VariantProps} from "class-variance-authority"
 
-const SelectVariants = cva('')
+const SelectVariants = cva('', {
+  variants: {
+    width: {
+      default: 'w-min',
+      
+    }
+  }
+})
 
 export type SelectProps = VariantProps<typeof SelectVariants> & {
   contents: {
