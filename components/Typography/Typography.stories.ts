@@ -17,7 +17,7 @@ const meta: Meta<TypographyProps> = {
       type:'string'
       },
       size:{
-        options: ["xs","sm","md","xl","title1","title2","title3"],
+        options: ["xs","sm","md","xl","title3","title2","title1"],
         control: {type:"select"}
       },
   },

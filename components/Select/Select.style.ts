@@ -1,5 +1,4 @@
 import { cva } from "class-variance-authority"
-import { theme } from "@/tailwind.config"
 
 export const SelectStyles = {
   select: "text-gray-800 py-2 mt-1 max-h-60 overflow-auto rounded-md py-1 text-sm shadow-lg pl-3 pr-3",
@@ -19,18 +18,40 @@ export const SelectVariants = cva("", {
       '2/4': 'w-2/4',
       '3/4': 'w-3/4'
     },
-    background: {
+    borderRadius: {
+      none: 'rounded-none',
+      sm: 'rounded-sm',
+      md: 'rounded-md',
+      lg: 'rounded-lg'
+    },
+    backgroundColor: {
       'white': 'bg-white',
       'gray-100': 'bg-gray-100',
       'gray-200': 'bg-gray-200',
+      'gray-800': 'bg-gray-800',
       'gray-900': 'bg-gray-900',
+      'black': 'bg-black'
     },
-    'opacity': theme.opacity,
-    'border-color': theme.colors
+    borderWidth: {
+      'none': 'border-0',
+      'border-1': 'border',
+      'border-2': 'border-2' 
+    },
+    borderColor: {
+      'primary': 'border-primary',
+      'secondary': 'border-secondary',
+      'tertiary': 'border-tertiary',
+      'quaternary': 'border-quaternary',
+      'success': 'border-success',
+      'error': 'border-error',
+      'warning': 'border-warning',
+      'disabled': 'border-disabled'
+    }
   },  
   defaultVariants: {
     width: 'full',
-    background: 'gray-200'
+    backgroundColor: 'gray-200',
+    borderWidth: 'none',
   }
 })
 

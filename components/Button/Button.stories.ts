@@ -4,6 +4,9 @@ import Button, { ButtonProps } from "./Button"
 const meta: Meta<ButtonProps> = {
   title: 'Molecules/Button',
   component: Button,
+  parameters: {
+    layout: 'centered'
+  },
   argTypes: {
     children: {
       type: "string"

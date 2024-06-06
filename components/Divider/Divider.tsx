@@ -1,32 +1,28 @@
 import React from "react";
+import { DividerVariant } from "./Divider.style";
+import { VariantProps } from "class-variance-authority";
 import classNames from "classnames";
 
-export type DividerProps = {
+export type DividerProps = VariantProps<typeof DividerVariant> & {
   width?: string;
-  height?: string;
-  bgColor?: "light" | "dark" 
   children?: React.ReactNode;
 } & React.HTMLAttributes<HTMLDivElement>;
 
-const colorClassMap = {
-  light: "bg-light",
-  dark: "bg-dark",
- 
-};
 
 const Divider = ({
-  width,
-  height = "h-[1px]",
+  width = '',
   children,
-  bgColor = "dark",
+  height,
+  backgroundColor,
   ...rest
 }: DividerProps) => {
-  const colorClass = colorClassMap[bgColor];
-
-  const barClass = classNames('grow', height, colorClass);
+  
+  const barClass = classNames('flex-1', DividerVariant({height, backgroundColor}));
 
   return (
-    <div className={classNames(width, "flex items-center justify-center")}>
+    <div 
+      className={classNames(width, "flex items-center")
+    }>
       <div className={barClass}></div>
       {children && <div className="px-2">{children}</div>}
       <div className={barClass}></div>

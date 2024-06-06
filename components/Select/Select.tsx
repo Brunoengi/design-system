@@ -21,7 +21,6 @@ const Select = ({ contents, className, ...rest }: SelectProps) => {
     className={`${SelectStyles.select} ${SelectVariants(rest)} ${className}`}
       name={contents.name}
       id={contents.id}
-      
     >
       {contents.options.map(option =>
          <option

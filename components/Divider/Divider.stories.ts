@@ -6,7 +6,21 @@ const meta: Meta<DividerProps> = {
   title: "Atoms/Divider",
   component: Divider,
   argTypes: {
-    children: { type: "string" },
+    height: {
+      options: ["1px", "2px"],
+      control: {
+        type: "select"
+      }
+    },
+    backgroundColor: {
+      options: ['primary', 'secondary', 'tertiary', 'quaternary', 'success', 'error', 'warning'],
+      control: {
+        type: "select"
+      }
+    },
+    children: { 
+      type: "string" 
+    },
   },
 };
 
