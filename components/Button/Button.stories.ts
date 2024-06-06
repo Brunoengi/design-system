@@ -1,5 +1,4 @@
 import { Meta, StoryObj } from "@storybook/react"
-
 import Button, { ButtonProps } from "./Button"
 
 const meta: Meta<ButtonProps> = {
@@ -9,18 +8,21 @@ const meta: Meta<ButtonProps> = {
     children: {
       type: "string"
     },
+    backgroundColor: {
+      type: "string",
+      options: ['primary', 'secondary', 'tertiary', 'quaternary', 'success', 'error', 'warning', 'disabled'],
+      control: {
+        type: "select"
+      }
+    },
+    borderRadius: {
+      options: ['none', 'sm', 'md', 'lg'],
+      control: {
+        type: 'select'
+      }
+    },
     disabled: {
       type: "boolean"
-    },
-    colorType: {
-      control: {
-        type: "select"
-      }
-    },
-    size: {
-      control: {
-        type: "select"
-      }
     },
     className: {
       type: "string"
@@ -33,60 +35,46 @@ export default meta
 export const Primary: StoryObj<ButtonProps> = {
   args: {
     children: 'Calcular',
+    borderRadius: 'none'
   }
 }
 
-export const PrimaryDark: StoryObj<ButtonProps> = {
+export const Sucess: StoryObj<ButtonProps> = {
   args: {
     children: 'Calcular',
+    backgroundColor: 'success'
   }
 }
 
-export const SecondaryDark: StoryObj<ButtonProps> = {
+export const Warning: StoryObj<ButtonProps> = {
   args: {
     children: 'Calcular',
-    colorType: 'secondary',
+    backgroundColor: 'warning',
+    borderRadius: 'none'
   }
 }
 
-export const DisabledPrimaryDark: StoryObj<ButtonProps> = {
+export const Error: StoryObj<ButtonProps> = {
   args: {
     children: 'Calcular',
-    disabled: true,
-    colorType: "disabled",
-    className: 'default disabled'
+    backgroundColor: 'error',
+    borderRadius: 'lg'
   }
 }
 
-export const PrimaryPink: StoryObj<ButtonProps> = {
+export const Disabled: StoryObj<ButtonProps> = {
   args: {
     children: 'Calcular',
-    colorType: 'primary',
-    className:'theme-pink'
+    backgroundColor: 'disabled',
+    borderRadius: 'none'
   }
 }
 
-export const SecondaryPink: StoryObj<ButtonProps> = {
+export const SecondaryThemeVintage: StoryObj<ButtonProps> = {
   args: {
     children: 'Calcular',
-    colorType: 'secondary',
-    className:'theme-pink'
-  }
-}
-
-export const PrimaryVintage: StoryObj<ButtonProps> = {
-  args: {
-    children: 'Calcular',
-    colorType: 'primary',
-    className:'theme-vintage'
-  }
-}
-
-export const SecondaryVintage: StoryObj<ButtonProps> = {
-  args: {
-    children: 'Calcular',
-    colorType: 'secondary',
-    className:'theme-vintage'
+    className:'theme-vintage',
+    backgroundColor: 'secondary'
   }
 }
 

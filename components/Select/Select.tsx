@@ -1,13 +1,7 @@
 import {cva, type VariantProps} from "class-variance-authority"
+import { SelectStyles } from "./Select.style"
+import { SelectVariants } from "./Select.style"
 
-const SelectVariants = cva('', {
-  variants: {
-    width: {
-      default: 'w-min',
-      
-    }
-  }
-})
 
 export type SelectProps = VariantProps<typeof SelectVariants> & {
   contents: {
@@ -22,20 +16,23 @@ export type SelectProps = VariantProps<typeof SelectVariants> & {
 
 const Select = ({ contents, className, ...rest }: SelectProps) => {
   return (
+    <>
     <select
-    className={className}
+    className={`${SelectStyles.select} ${SelectVariants(rest)} ${className}`}
       name={contents.name}
       id={contents.id}
-      {...rest}
+      
     >
       {contents.options.map(option =>
          <option
+          className={SelectStyles.option}
           value={option.value}
          >
           {option.label}
          </option>)}
     </select>
-  )
+    </>
+    )
 }
 
 export default Select

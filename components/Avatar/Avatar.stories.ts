@@ -7,6 +7,12 @@ const meta: Meta<AvatarProps> = {
   component: Avatar,
   argTypes: {
     className: { type: "string" },
+    size: {
+      options: ['xs', 'sm', 'md', 'lg'],
+      control: {
+        type: "select"
+      }
+    }
   },
 };
 
@@ -16,14 +22,14 @@ export const Primary: StoryObj<AvatarProps> = {
   args: {},
 };
 
-export const AvatarImage: StoryObj<AvatarProps> = {
+export const Xsmall: StoryObj<AvatarProps> = {
   args: {
-    size: "lg",
+    size: "xs",
     image: "https://placehold.co/400x400.png",
   }
 }
 
-  export const ErrorIcon: StoryObj<AvatarProps> = {
+  export const Large: StoryObj<AvatarProps> = {
     args: {
       size: "lg",
     },

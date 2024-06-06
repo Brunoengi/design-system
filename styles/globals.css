@@ -16,50 +16,89 @@
   font-style: normal;
   }
 
-  :root {
+:root {
+  /* Colors */
+  --primary: 0, 0, 0;
+  --secondary: 40, 40, 40;
+  --tertiary: 80, 80, 80;
+  --quaternary: 120, 120, 120;
 
-  /* Status Colors */
-  --status-sucess: 0, 200, 81;
-  --status-sucess-dark: 0, 126, 51;
-  --status-warning: 255, 187, 51;
-  --status-warning-dark: 255, 136, 0;
-  --status-danger: 255, 68, 68;
-  --status-disabled: 140, 140, 140;
+  --white: 255, 255, 255;
+  --black: 0, 0, 0;
 
-  /*Theme Color Background*/
-  --very-dark: 0, 0, 0;
-  --dark: 40, 40, 40;
-  --middle: 80, 80, 80;
-  --light: 120, 120, 120; 
-  --very-light: 150, 150, 150;
-
-  /*Theme color Text*/
- 
-   /* Font Size */
-    --text-xs: 12px;
-    --text-sm: 14px;
-    --text-md: 16px;
-    --text-lg: 18px;
-    --text-xl: 20px;
-
-    /* Title Font Size */
-    --title-md: 40px;
-    --title-lg: 48px;
-    --title-xl: 56px;
- }
+  /* Status Colors*/
+  --success: 58, 201, 34;
+  --error: 255, 48, 48;
+  --warning: 255, 187, 51;
+  --disabled: 160, 160, 160;
   
-  .theme-pink {
-    --very-dark: 190, 40, 100;
-    --dark: 255, 40, 100; 
-  }
+  --bg-light: 255, 255, 255;
+  --bg-dark: 248, 248, 248;
 
-  .theme-vintage {
-    --very-dark: 50, 44, 43;
-    --dark: 128, 61, 59;
-    --bg-middle: 175, 130, 96;
-    --bg-light: 228, 197, 158;
-    --bg-very-light: 228, 197, 220;
-  }
+  --text-primary: 24, 24, 24;
+  --text-secondary: 92, 92, 92;
+  --text-tertiary: 116, 116, 116;
+  --text-success: 58, 201, 34;
+  --text-error: 255, 48, 48;
+  --text-disabled: 138, 138, 138;
+
+  --scrollbar-thumb-color: #d7d7d7;
+  --scrollbar-track-color: #ededed;
+
+  /* Screens */
+  --screen-mobile: 640px;
+  --screen-tablet: 1024px;
+  --screen-desktop: 1440px;
+  --screen-tv: 1920px;
+
+  /* Shadows */
+  --shadow-sm: 0px 0px 10px rgba(132, 132, 132, 15%);
+  --shadow-md: 0px 0px 20px rgba(132, 132, 132, 20%);
+  --shadow-lg: 0px 0px 30px rgba(132, 132, 132, 25%);
+  --shadow-focus: 0px 0px 0px 2px #643296;
+  --shadow-outline: 0px 0px 0px 2px #e8e8e8;
+  --shadow-button-focus: 0px 0px 0px 2px #af4bfe;
+
+  /* Blur */
+  --blur: 4px;
+
+  /* Spacing */
+  --spacing-none: 0px;
+  --spacing-4xs: 8px;
+  --spacing-2xs: 12px;
+  --spacing-xs: 16px;
+  --spacing-sm: 20px;
+  --spacing-md: 24px;
+  --spacing-lg: 32px;
+  --spacing-xl: 40px;
+  --spacing-2xl: 48px;
+  --spacing-4xl: 56px;
+
+  /* Border Radius */
+  --border-radius-none: 0px;
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 16px;
+
+  /* Font Size */
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-md: 16px;
+  --text-lg: 18px;
+  --text-xl: 20px;
+
+  /* Title Font Size */
+  --title-md: 40px;
+  --title-lg: 48px;
+  --title-xl: 56px;
+}
+
+.theme-vintage {
+  --primary: 50, 44, 43;
+  --secondary: 128, 61, 59;
+  --tertiary: 175, 130, 96;
+  --quaternary: 228, 197, 158;
+}
 }
 
 

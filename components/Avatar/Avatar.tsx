@@ -18,7 +18,6 @@ const AvatarVariants = cva('', {
 })
 
 export type AvatarProps = VariantProps<typeof AvatarVariants> & {
-  size?: 'xs' | 'sm' | 'md' | 'lg';
   image?: string,
   description?: string
 } & React.HTMLAttributes<HTMLDivElement>
