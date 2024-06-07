@@ -11,6 +11,7 @@ export const myTheme = {
     tv: "var(--screen-tv)",
   },
   fontSize: {
+    xxs: "var(--text-xxs)",
     xs: "var(--text-xs)",
     sm: "var(--text-sm)",
     md: "var(--text-md)",

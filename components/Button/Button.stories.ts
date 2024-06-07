@@ -38,7 +38,8 @@ export default meta
 export const Primary: StoryObj<ButtonProps> = {
   args: {
     children: 'Calcular',
-    borderRadius: 'none'
+    borderRadius: 'none',
+    className: 'font-medium text-xs'
   }
 }
 

@@ -1,5 +1,5 @@
 import { cva } from "class-variance-authority"
-export const InputVariant = cva('text-gray-800 py-2 mt-1 overflow-auto text-sm shadow-lg pl-3 pr-3 text-center', {
+export const InputVariant = cva('text-gray-800 py-2 mt-1 overflow-auto shadow-lg pl-3 pr-3 text-center', {
   variants: {
     backgroundColor: {
       'primary': 'bg-primary',
@@ -14,9 +14,26 @@ export const InputVariant = cva('text-gray-800 py-2 mt-1 overflow-auto text-sm s
       'gray-200': 'bg-gray-200',
       'gray-800': 'bg-gray-800',
       'gray-900': 'bg-gray-900',
-      'none': '',
       'white': 'bg-white',
-      'black': 'bg-black'
+      'black': 'bg-black',
+      'transparent': 'bg-transparent'
+    },
+    textColor: {
+      'primary': 'text-primary',
+      'secondary': 'text-secondary',
+      'tertiary': 'text-tertiary',
+      'quaternary': 'text-quaternary',
+      'success': 'text-success',
+      'error': 'text-error',
+      'warning': 'text-warning',
+      'disabled': 'text-disabled',
+      'gray-100': 'text-gray-100',
+      'gray-200': 'text-gray-200',
+      'gray-800': 'text-gray-800',
+      'gray-900': 'text-gray-900',
+      'black': 'text-black',
+      'white': 'text-white',
+      'transparent': 'text-transparent'
     },
     borderRadius: {
       none: 'rounded-none',

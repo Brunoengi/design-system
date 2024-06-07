@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority"
 
 export const SelectStyles = {
-  select: "text-gray-800 py-2 mt-1 max-h-60 overflow-auto rounded-md text-sm shadow-lg pl-3 pr-3",
+  select: "text-gray-800 py-2 mt-1 max-h-60 overflow-auto rounded-md shadow-lg pl-3 pr-3",
   option: "text-gray-800 relative cursor-default select-none py-2 pl-10 pr-4 rounded-none "
 }
 

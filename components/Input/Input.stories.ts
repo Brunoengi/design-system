@@ -18,8 +18,14 @@ const meta: Meta<InputProps> = {
       options: ['full', 'max', 'min', '1/2', '1/3', '2/3', '1/4', '2/4', '3/4', 'w-12', 'w-16', 'w-20', 'w-24', 'w-28', 'w-32'],
       control: "select"
     },
+    textColor: {
+      options: ["primary", "secondary", "tertiary", "quaternary", "success", "error", "warning", "disabled", "gray-100", "gray-200", "gray-800", "gray-900", "black", "white", "transparent"],
+      control: {
+        type: "select"
+      }
+    },
     backgroundColor: {
-      options: ['primary', 'secondary', 'tertiary', 'quaternary', 'success', 'error', 'warning', 'disabled', 'gray-100', 'gray-200', 'gray-800', 'gray-900', 'black', 'white', 'none'],
+      options: ['primary', 'secondary', 'tertiary', 'quaternary', 'success', 'error', 'warning', 'disabled', 'gray-100', 'gray-200', 'gray-800', 'gray-900', 'black', 'white', 'transparent'],
       control: {
         type: 'select'
       }
