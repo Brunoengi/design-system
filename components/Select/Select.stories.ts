@@ -1,4 +1,4 @@
-import { Meta, StoryObj, StoryFn } from "@storybook/react"
+import { Meta, StoryObj } from "@storybook/react"
 import Select, { SelectProps } from "./Select"
 
 const meta: Meta<SelectProps> = {
@@ -6,11 +6,11 @@ const meta: Meta<SelectProps> = {
   component: Select,
   argTypes: {
     width: {
-      options: ['full', 'max', 'min', '1/2', '1/3', '2/3', '1/4', '2/4', '3/4'],
+      options: ['w-12', 'w-16', 'w-20', 'w-24', 'w-28', 'w-32', 'w-40', 'full', 'max', 'min', '1/2', '1/3', '2/3', '1/4', '2/4', '3/4'],
       control: "select"
     },
     backgroundColor: {
-      options: ['white', 'gray-100', 'gray-200', 'gray-800', 'gray-900', 'black'],
+      options: ['gray-100', 'gray-200', 'gray-800', 'gray-900', 'black', 'white', 'transparent'],
       control: {
         type: 'select'
       }

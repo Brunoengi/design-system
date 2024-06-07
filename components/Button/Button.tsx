@@ -1,8 +1,8 @@
 import { VariantProps } from "class-variance-authority"
 import { ButtonVariant } from "./Button.style"
 
-export type ButtonProps = VariantProps<typeof ButtonVariant> & {
-} & React.ButtonHTMLAttributes<HTMLButtonElement>
+export type ButtonProps = VariantProps<typeof ButtonVariant> 
+  & React.ButtonHTMLAttributes<HTMLButtonElement>
 
 
 const Button = ({ children, className, disabled = false, ...rest }: ButtonProps) => {

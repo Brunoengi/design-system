@@ -1,6 +1,6 @@
 import { cva } from "class-variance-authority";
 
-export const DividerVariant = cva('', {
+export const DividerVariants = cva('', {
   variants: {
     height: {
       "1px": "h-[1px]",

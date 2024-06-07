@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react"
 import Button, { ButtonProps } from "./Button"
 
 const meta: Meta<ButtonProps> = {
-  title: 'Molecules/Button',
+  title: 'Atoms/Button',
   component: Button,
   parameters: {
     layout: 'centered'
@@ -13,7 +13,7 @@ const meta: Meta<ButtonProps> = {
     },
     backgroundColor: {
       type: "string",
-      options: ['primary', 'secondary', 'tertiary', 'quaternary', 'success', 'error', 'warning', 'disabled'],
+      options: ['primary', 'secondary', 'tertiary', 'quaternary', 'success', 'error', 'warning', 'disabled', 'transparent'],
       control: {
         type: "select"
       }

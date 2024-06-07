@@ -1,4 +1,4 @@
-import {cva, type VariantProps} from "class-variance-authority"
+import { type VariantProps } from "class-variance-authority"
 import { SelectStyles } from "./Select.style"
 import { SelectVariants } from "./Select.style"
 

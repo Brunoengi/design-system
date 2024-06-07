@@ -1,12 +1,20 @@
 import { cva } from "class-variance-authority"
 
-export const SelectStyles = {
-  select: "text-gray-800 py-2 mt-1 max-h-60 overflow-auto rounded-md text-sm shadow-lg pl-3 pr-3",
-  option: "text-gray-800 relative cursor-default select-none py-2 pl-10 pr-4 rounded-none "
+export const DisclosureStyles = {
+  container: '',
+  button: 'p-2 group w-full flex justify-between items-center',
+  icon: 'w-5 group-data-[open]:rotate-180',
+  painel: 'p-2'
 }
 
-export const SelectVariants = cva("text-center", {
+export const DisclosureVariants = cva('', {
   variants: {
+    textAlign: {
+      left: 'text-left',
+      center: 'text-center',
+      right: 'text-right',
+      justify: 'text-justify'
+    },
     width: {
       'w-12': 'w-12',
       'w-16': 'w-16',
@@ -32,7 +40,14 @@ export const SelectVariants = cva("text-center", {
       lg: 'rounded-lg'
     },
     backgroundColor: {
-      
+      'primary': 'bg-primary',
+      'secondary': 'bg-secondary',
+      'tertiary': 'bg-tertiary',
+      'quaternary': 'bg-quaternary',
+      'success': 'bg-success',
+      'error': 'bg-error',
+      'warning': 'bg-warning',
+      'disabled': 'bg-disabled',
       'gray-100': 'bg-gray-100',
       'gray-200': 'bg-gray-200',
       'gray-800': 'bg-gray-800',
@@ -59,8 +74,8 @@ export const SelectVariants = cva("text-center", {
   },  
   defaultVariants: {
     width: 'full',
-    backgroundColor: 'gray-200',
     borderWidth: 'none',
+    borderColor: 'primary'
   }
 })
 

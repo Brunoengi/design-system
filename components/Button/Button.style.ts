@@ -10,7 +10,8 @@ export const ButtonVariant = cva('text-white py-1 px-3', {
       'success': 'bg-success',
       'error': 'bg-error',
       'warning': 'bg-warning',
-      'disabled': 'bg-disabled'
+      'disabled': 'bg-disabled',
+      'transparent': 'bg-transparent'
     },
     borderRadius: {
       none: 'rounded-none',
