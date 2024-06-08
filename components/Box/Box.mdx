@@ -1,0 +1,30 @@
+import { Meta, Primary, Canvas, Controls } from "@storybook/blocks";
+
+import * as Story from "./Box.stories.ts";
+
+<Meta of={Story} />
+
+# Box
+
+O componente Box é um contêiner versátil utilizado para envolver e agrupar outros elementos da interface. Ele fornece uma estrutura visual e organizacional, permitindo agrupar e posicionar componentes, texto, imagens e outros elementos dentro de um espaço definido.
+
+### Box padrão
+
+<Canvas of={Story.Default} />
+
+### Box de Alerta
+
+<Canvas of={Story.BoxAlert} />
+
+### Box de Error
+
+<Canvas of={Story.BoxError} />
+
+### Box de Sucesso
+
+<Canvas of={Story.BoxSuccess} />
+
+## Documentação Interativa
+
+<Primary />
+<Controls />
