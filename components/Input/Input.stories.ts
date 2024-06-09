@@ -95,4 +95,4 @@ export const w20:StoryObj<InputProps> = {
 
 
 
-export default meta;
+export default meta

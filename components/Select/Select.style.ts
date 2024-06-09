@@ -1,8 +1,8 @@
 import { cva } from "class-variance-authority"
 
 export const SelectStyles = {
-  select: "text-gray-800 py-2 mt-1 max-h-60 overflow-auto rounded-md shadow-lg pl-3 pr-3",
-  option: "text-gray-800 relative cursor-default select-none py-2 pl-10 pr-4 rounded-none "
+  select: " py-2 mt-1 pl-3 pr-3",
+  option: " relative cursor-default select-none py-2 pl-10 pr-4 rounded-none "
 }
 
 export const SelectVariants = cva("text-center", {
@@ -59,7 +59,7 @@ export const SelectVariants = cva("text-center", {
   },  
   defaultVariants: {
     width: 'full',
-    backgroundColor: 'gray-200',
+    backgroundColor: 'transparent',
     borderWidth: 'none',
   }
 })

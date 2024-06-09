@@ -1,11 +1,27 @@
 import { cva } from "class-variance-authority"
-export const BoxVariants = cva("", {
+
+export const InputGroupStyles = {
+  container: 'flex items-center'
+}
+
+export const InputGroupVariants = cva('py-0 mt-1 shadow-lg pl-3 pr-3 text-center', {
   variants: {
-    borderRadius: {
-      none: 'rounded-none',
-      sm: 'rounded-sm',
-      md: 'rounded-md',
-      lg: 'rounded-lg'
+    backgroundColor: {
+      'primary': 'bg-primary',
+      'secondary': 'bg-secondary',
+      'tertiary': 'bg-tertiary',
+      'quaternary': 'bg-quaternary',
+      'success': 'bg-success',
+      'error': 'bg-error',
+      'warning': 'bg-warning',
+      'disabled': 'bg-disabled',
+      'gray-100': 'bg-gray-100',
+      'gray-200': 'bg-gray-200',
+      'gray-800': 'bg-gray-800',
+      'gray-900': 'bg-gray-900',
+      'white': 'bg-white',
+      'black': 'bg-black',
+      'transparent': 'bg-transparent'
     },
     textColor: {
       'primary': 'text-primary',
@@ -24,22 +40,16 @@ export const BoxVariants = cva("", {
       'white': 'text-white',
       'transparent': 'text-transparent'
     },
-    backgroundColor: {
-      'primary': 'bg-primary',
-      'secondary': 'bg-secondary',
-      'tertiary': 'bg-tertiary',
-      'quaternary': 'bg-quaternary',
-      'success': 'bg-success',
-      'error': 'bg-error',
-      'warning': 'bg-warning',
-      'disabled': 'bg-disabled',
-      'gray-100': 'bg-gray-100',
-      'gray-200': 'bg-gray-200',
-      'gray-800': 'bg-gray-800',
-      'gray-900': 'bg-gray-900',
-      'white': 'bg-white',
-      'black': 'bg-black',
-      'transparent': 'bg-transparent'
+    borderRadius: {
+      none: 'rounded-none',
+      sm: 'rounded-sm',
+      md: 'rounded-md',
+      lg: 'rounded-lg'
+    },
+    borderWidth: {
+      'none': 'border-0',
+      'border-1': 'border',
+      'border-2': 'border-2' 
     },
     borderColor: {
       'primary': 'border-primary',
@@ -68,10 +78,5 @@ export const BoxVariants = cva("", {
       '2/4': 'w-2/4',
       '3/4': 'w-3/4'
     },
-    borderWidth: {
-      'none': 'border-0',
-      'border-1': 'border',
-      'border-2': 'border-2' 
-    }
   },
 })
