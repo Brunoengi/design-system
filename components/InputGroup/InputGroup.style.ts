@@ -1,10 +1,13 @@
 import { cva } from "class-variance-authority"
 
 export const InputGroupStyles = {
-  container: 'flex items-center'
+  container: 'flex items-center',
+  leftElement: 'flex-1 px-2 min-w-14',
+  centralElement: 'flex-1',
+  rightElement: 'flex-1 px-2 min-w-14'
 }
 
-export const InputGroupVariants = cva('py-0 mt-1 shadow-lg pl-3 pr-3 text-center', {
+export const InputGroupVariants = cva('py-0 shadow-lg text-center', {
   variants: {
     backgroundColor: {
       'primary': 'bg-primary',
@@ -40,16 +43,27 @@ export const InputGroupVariants = cva('py-0 mt-1 shadow-lg pl-3 pr-3 text-center
       'white': 'text-white',
       'transparent': 'text-transparent'
     },
-    borderRadius: {
+    externalBorderRadius: {
       none: 'rounded-none',
       sm: 'rounded-sm',
       md: 'rounded-md',
       lg: 'rounded-lg'
     },
-    borderWidth: {
+    internalBorderRadius: {
+      none: 'rounded-none',
+      sm: 'rounded-sm',
+      md: 'rounded-md',
+      lg: 'rounded-lg'
+    },
+    externalBorderWidth: {
       'none': 'border-0',
       'border-1': 'border',
       'border-2': 'border-2' 
+    },
+    internalBorderWidth: {
+      'none': 'border-0',
+      'border-1': 'border-r border-l',
+      'border-2': 'border-x-2' 
     },
     borderColor: {
       'primary': 'border-primary',
@@ -62,12 +76,11 @@ export const InputGroupVariants = cva('py-0 mt-1 shadow-lg pl-3 pr-3 text-center
       'disabled': 'border-disabled'
     },
     width: {
-      'w-12': 'w-12',
-      'w-16': 'w-16',
-      'w-20': 'w-20',
-      'w-24': 'w-24',
-      'w-28': 'w-28',
-      'w-32': 'w-32',
+      'w-60': 'w-60',
+      'w-64': 'w-64',
+      'w-72': 'w-72',
+      'w-80': 'w-80',
+      'w-96': 'w-96',
       'full': 'w-full',
       'max': 'w-max',
       'min': 'w-min',
@@ -79,4 +92,11 @@ export const InputGroupVariants = cva('py-0 mt-1 shadow-lg pl-3 pr-3 text-center
       '3/4': 'w-3/4'
     },
   },
+  defaultVariants: {
+    externalBorderRadius: 'sm',
+    externalBorderWidth: 'border-1',
+    internalBorderRadius: 'sm',
+    internalBorderWidth: 'border-1',
+    borderColor: 'primary'
+  }
 })

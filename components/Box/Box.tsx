@@ -8,7 +8,7 @@ export type BoxProps = VariantProps<typeof BoxVariants> & {
 
 const Box = ({ children, className, ...rest }: BoxProps) => {
   return (
-    <div className={BoxVariants(rest)} {...rest}>
+    <div className={`${BoxVariants(rest)} ${className}`} {...rest}>
       {children}
     </div>
   );

@@ -4,7 +4,7 @@ import Typography from "../Typography/Typography"
 
 
 const meta: Meta<InputGroupProps> = {
-  title: "Organisms/InputGroup",
+  title: "Organisms/Input Group",
   component: InputGroup,
   parameters: {
     layout: 'centered'
@@ -16,7 +16,7 @@ const meta: Meta<InputGroupProps> = {
       }
     },
     width: {
-      options: ['full', 'max', 'min', '1/2', '1/3', '2/3', '1/4', '2/4', '3/4', 'w-12', 'w-16', 'w-20', 'w-24', 'w-28', 'w-32'],
+      options: ['w-60', 'w-64', 'w-72', 'w-80', 'w-96', 'full', 'max', 'min', '1/2', '1/3', '2/3', '1/4', '2/4', '3/4'],
       control: "select"
     },
     textColor: {
@@ -31,8 +31,26 @@ const meta: Meta<InputGroupProps> = {
         type: 'select'
       }
     },
-    borderRadius: {
+    externalBorderRadius: {
       options: ['none', 'sm', 'md', 'lg'],
+      control: {
+        type: 'select'
+      }
+    },
+    externalBorderWidth: {
+      options: ['none', 'border-1', 'border-2'],
+      control: {
+        type: 'select'
+      }
+    },
+    internalBorderRadius: {
+      options: ['none', 'sm', 'md', 'lg'],
+      control: {
+        type: 'select'
+      }
+    },
+    internalBorderWidth: {
+      options: ['none', 'border-1', 'border-2'],
       control: {
         type: 'select'
       }
@@ -43,16 +61,11 @@ const meta: Meta<InputGroupProps> = {
         type: 'select'
       }
     },
-    borderWidth: {
-      options: ['none', 'border-1', 'border-2'],
-      control: {
-        type: 'select'
-      }
-    }
+    
   },
 }
 
-export const Primary:StoryObj<InputGroupProps> = {
+export const Primary: StoryObj<InputGroupProps> = {
   args: {
     leftBox: {
       children: 
@@ -84,7 +97,7 @@ export const Primary:StoryObj<InputGroupProps> = {
   }
 }
 
-export const Steel:StoryObj<InputGroupProps> = {
+export const Steel: StoryObj<InputGroupProps> = {
   args: {
     leftBox: {
       children: 
@@ -105,7 +118,8 @@ export const Steel:StoryObj<InputGroupProps> = {
           value: '600',
           label: '600 (CA-60)'
         }]
-      }
+      },
+      className: 'min-w-36',
     },
     rightBox: {
       children: 
@@ -116,7 +130,7 @@ export const Steel:StoryObj<InputGroupProps> = {
   }
 }
 
-export const Concrete:StoryObj<InputGroupProps> = {
+export const Concrete: StoryObj<InputGroupProps> = {
   args: {
     leftBox: {
       children: 
@@ -126,6 +140,7 @@ export const Concrete:StoryObj<InputGroupProps> = {
     },
     type: 'select',
     DataElement: {
+      className: 'min-w-36',
       contents: {
         name: 'concrete',
         id: 'concrete',
@@ -198,13 +213,28 @@ export const Concrete:StoryObj<InputGroupProps> = {
           label: '100'
         },
       ]
-    }
+      }
     },
     rightBox: {
       children: 
         <Typography
           children={'MPa'}
         />
+    }
+  }
+}
+
+export const Base: StoryObj<InputGroupProps> = {
+  args: {
+    leftBox: {
+      children: <Typography>b</Typography>
+    },
+    DataElement: {
+      className:"w-12"
+    },
+    type: "input",
+    rightBox: {
+      children: <Typography>cm</Typography>
     }
   }
 }

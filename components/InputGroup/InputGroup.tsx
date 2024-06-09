@@ -8,29 +8,36 @@ export type InputGroupProps = VariantProps<typeof InputGroupVariants> & {
   leftBox: BoxProps
   rightBox: BoxProps
   type: 'select' | 'input'
-  DataElement: InputProps | SelectProps
+  DataElement?: InputProps | SelectProps
 } & React.InputHTMLAttributes<HTMLInputElement>
 
-const InputGroup = ({ leftBox, rightBox, type, DataElement, className, ...rest}: InputGroupProps) => {
+const InputGroup = ({ leftBox, rightBox, type, DataElement, className, internalBorderRadius, internalBorderWidth, borderColor, ...rest}: InputGroupProps) => {
   
+  const middleComponent = ({type, DataElement}: {type: InputGroupProps['type'], DataElement: any}) => {
+    const Component = type == 'select' ? Select : Input
+    
+    return (
+    <Component
+    {...DataElement}
+    className={`${InputGroupVariants({internalBorderRadius, internalBorderWidth, borderColor})} ${DataElement?.className}`}
+      
+    />
+    )
+  }
+
   return (
     <div
-    className={`${InputGroupStyles.container} ${InputGroupVariants(rest)} ${className}`}
+    className={`${InputGroupStyles.container} ${InputGroupVariants({...rest, borderColor})} ${className}`}
       {...rest}
     >
     <Box
       {...leftBox}
+      className={`${InputGroupStyles.leftElement} ${leftBox.className}`}
     />
-    { type == 'select' ? 
-    <Select
-      {...DataElement as SelectProps}  
-    /> 
-    : 
-    <Input
-    {...DataElement as InputProps} 
-    /> }
+    {middleComponent({type, DataElement})}
     <Box 
     {...rightBox}
+    className={`${InputGroupStyles.rightElement} ${rightBox.className}`}
     />
     </div>
   )
