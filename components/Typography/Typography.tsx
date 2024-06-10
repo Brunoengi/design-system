@@ -3,6 +3,12 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 const textVariants = cva("", {
   variants: {
+    align: {
+      left: "text-left",
+      center: "text-center",
+      right: "text-right",
+      justify: "text-justify"
+    },
     size: {
       xxs: "text-xxs",
       xs: "text-xs",

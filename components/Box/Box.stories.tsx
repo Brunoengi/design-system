@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
 
 import Box, {type BoxProps} from "./Box"
+import Typography from "../Typography/Typography";
 
 const meta: Meta<BoxProps> = {
   title: "Atoms/Box",
@@ -50,26 +51,36 @@ export const Primary: StoryObj<BoxProps> = {
 export const Default: StoryObj<BoxProps> = {
   args: {
     children: "Este é uma Box Padrão",
+    borderWidth: "border-1",
+    className: "px-4"
   },
 };
 
 export const BoxAlert: StoryObj<BoxProps> = {
   args: {
     children: "Este é um alerta!",
-    borderColor: "warning"
-  },
-};
-
-export const BoxSuccess: StoryObj<BoxProps> = {
-  args: {
-    children: "Operação concluída com sucesso!",
-    borderColor: "success"
+    borderColor: "warning",
+    borderWidth: "border-1",
+    className: "px-4",
+    borderRadius: "lg"
+    
   },
 };
 
 export const BoxError: StoryObj<BoxProps> = {
   args: {
     children: "Ocorreu um erro durante a operação.",
-    borderColor: "error"
+    borderColor: "error",
+    borderWidth: "border-1",
+    className: "text-center"
   },
-};
+}
+
+export const BoxSuccess: StoryObj<BoxProps> = {
+  args: {
+    children: <Typography>Sucesso</Typography>,
+    borderColor: "success",
+    borderWidth: "border-1",
+    className: "px-4"
+  },
+}

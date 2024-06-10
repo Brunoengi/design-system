@@ -1,6 +1,6 @@
 import { cva } from "class-variance-authority";
 
-export const ButtonVariant = cva('text-white py-1 px-3', {
+export const ButtonVariant = cva('text-white py-2 px-6', {
   variants: {
     backgroundColor: {
       'primary': 'bg-primary',

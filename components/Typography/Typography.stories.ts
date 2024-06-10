@@ -8,13 +8,20 @@ const meta: Meta<TypographyProps> = {
   component: Typography,
   argTypes: {
     element:{
-      options:["p","h1","h2","h3","div"]
+      options:["p", "h1", "h2", "h3", "div"]
     },
     className: {
       type: "string",
     },
     children: {
-      type:'string'
+      type: "string"
+      },
+      align: {
+        type: "string",
+        options: ["left", "center", "right", "justify"],
+        control: {
+          type: "select"
+        }
       },
       size:{
         options: ["xxs", "xs", "sm", "md", "xl", "title3", "title2", "title1"],
