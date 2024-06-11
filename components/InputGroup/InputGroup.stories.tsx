@@ -4,7 +4,7 @@ import Typography from "../Typography/Typography"
 
 
 const meta: Meta<InputGroupProps> = {
-  title: "Organisms/Input Group",
+  title: "Design System/Organisms/Input Group",
   component: InputGroup,
   parameters: {
     layout: 'centered'

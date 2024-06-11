@@ -34,7 +34,7 @@ const ModalStoryInfo = (args: ModalProps) => {
 };
 
 const meta: Meta<typeof Modal> = {
-  title: "Molecules/Modal",
+  title: "Design System/Molecules/Modal",
   component: Modal,
   decorators: [
     (Story) => (

@@ -4,7 +4,7 @@ import Box, {type BoxProps} from "./Box"
 import Typography from "../Typography/Typography";
 
 const meta: Meta<BoxProps> = {
-  title: "Atoms/Box",
+  title: "Design System/Atoms/Box",
   component: Box,
   argTypes: {
     children: { type: "string" },

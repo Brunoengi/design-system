@@ -3,7 +3,7 @@ import Input, { InputProps } from "./Input"
 
 
 const meta: Meta<InputProps> = {
-  title: "Atoms/Input",
+  title: "Design System/Atoms/Input",
   component: Input,
   parameters: {
     layout: 'centered'

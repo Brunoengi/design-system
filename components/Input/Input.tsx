@@ -17,6 +17,8 @@ const Input = ({ type='number', value, className, ...rest }: InputProps) => {
       type={type}
       className={`${InputVariant(rest)} ${className}`}
       value={value}
+      min={rest.minValue}
+      max={rest.maxValue}
     >
     </input>
   )

@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react"
 import Select, { SelectProps } from "./Select"
 
 const meta: Meta<SelectProps> = {
-  title: "Molecules/Select",
+  title: "Design System/Molecules/Select",
   component: Select,
   argTypes: {
     width: {

@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react"
 import Button, { ButtonProps } from "./Button"
 
 const meta: Meta<ButtonProps> = {
-  title: 'Atoms/Button',
+  title: 'Design System/Atoms/Button',
   component: Button,
   parameters: {
     layout: 'centered'
@@ -30,7 +30,8 @@ const meta: Meta<ButtonProps> = {
     className: {
       type: "string"
     },
-  }
+    onClick: {action: 'clicked'}
+  },
 }
 
 export default meta

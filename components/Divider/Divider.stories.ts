@@ -3,7 +3,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import Divider, { type DividerProps } from "./Divider";
 
 const meta: Meta<DividerProps> = {
-  title: "Atoms/Divider",
+  title: "Design System/Atoms/Divider",
   component: Divider,
   argTypes: {
     height: {

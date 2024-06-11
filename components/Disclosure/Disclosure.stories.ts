@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react"
 import Disclosure, {DisclosureProps} from "./Disclosure"
 
 const meta: Meta<DisclosureProps> = {
-  title: "Molecules/Disclosure",
+  title: "Design System/Molecules/Disclosure",
   argTypes: {
     textAlign: {
       options: ['left', 'center', 'right', 'justify'],
