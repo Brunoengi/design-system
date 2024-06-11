@@ -11,7 +11,9 @@ const ModalStoryInfo = (args: ModalProps) => {
     <>
       <Button onClick={() => setIsOpen(true)}>Abrir Modal</Button>
       <Modal {...args} isOpen={isOpen} onClose={() => setIsOpen(false)}>
-        <Typography>
+        <Typography
+         size={'sm'}
+        >
           Today, every company I talk to wants to implement a design system from
           scratch. Unfortunately, the details of a design system are not
           explored, so often they are not used to the maximum to create a useful
