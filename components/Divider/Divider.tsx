@@ -4,16 +4,15 @@ import { VariantProps } from "class-variance-authority";
 import classNames from "classnames";
 
 export type DividerProps = VariantProps<typeof DividerVariants> & {
-  width?: string;
   children?: React.ReactNode;
 } & React.HTMLAttributes<HTMLDivElement>;
 
 
 const Divider = ({
-  width = '',
   children,
   height,
   backgroundColor,
+  className,
   ...rest
 }: DividerProps) => {
   
@@ -21,7 +20,7 @@ const Divider = ({
 
   return (
     <div 
-      className={classNames(width, "flex items-center")
+      className={`${classNames("flex items-center")} ${className}`
     }>
       <div className={barClass}></div>
       {children && <div className="px-2">{children}</div>}
