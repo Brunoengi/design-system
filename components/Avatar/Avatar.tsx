@@ -22,7 +22,7 @@ export type AvatarProps = VariantProps<typeof AvatarVariants> & {
   description?: string
 } & React.HTMLAttributes<HTMLDivElement>
 
-const Icon = ({ size = 'sm',image, description='', className, ...rest }: AvatarProps) => {
+const Avatar = ({ size = 'sm',image, description='', className, ...rest }: AvatarProps) => {
 
   const avatarComponent = image ? (
     <AvatarImage src={image} altDescription={description}/>
@@ -38,4 +38,4 @@ const Icon = ({ size = 'sm',image, description='', className, ...rest }: AvatarP
   </div>
 }
 
-export default Icon
+export default Avatar
