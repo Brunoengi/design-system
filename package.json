@@ -1,8 +1,8 @@
 {
   "name": "sosec-ds",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
-  "files": ["styles/globals.css", "tailwind.config.js", "components/*", "fonts/*"],
+  "files": ["styles/globals.css", "tailwind.config.ts", "components/*", "fonts/*"],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
