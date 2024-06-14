@@ -9,17 +9,17 @@
 <h2>Summary</h2>
 
 <ol>
-  <li>What is the project</li>
-  <li>Component List</li>
-  <li>Installation Instructions</li>
-  <li>Use Instructions</li>
+  <li ><a href='#project'>What is the project</a></li>
+  <li ><a href='#component-list'>Component List</a></li>
+  <li ><a href='#intallation'>Installation Instructions</a></li>
+  <li ><a href='#use'>Use Instructions</a></li>
 </ol>
 
-<h3>What is the project</h3>
+<h3 id="project">1 - What is the project</h3>
 
 This repository is a design system for web and desktop applications designed for applications related to exact sciences. Here, there will be components that support scientific notation and the AsciiMath standard, which is an easy-to-write markup language for mathematics. The repository is based on the atomic design methodology, until then divided into atoms, molecules and organisms.
 
-<h3>Component List</h3>
+<h3 id="component-list">2 - Component List</h3>
 
 | Atoms     | Molecules   | Organisms   | 
 | :---:     | :---:       | :---:       |
@@ -31,7 +31,7 @@ This repository is a design system for web and desktop applications designed for
 | Math Text |
 | Typography|  
 
-<h3>Installation Instructions</h3>
+<h3 id="intallation">3 - Installation Instructions</h3>
 
 <b>Step 1: Download de Project: </b> You can download the project with the npm dependency manager or through github <link>link here</link>. You can use create-next-app to have an initial configuration.
 
@@ -39,9 +39,9 @@ This repository is a design system for web and desktop applications designed for
 npm i sosec-ds
 ```
 
-Through npm, you will have the production version, which contains only the components with their types, web fonts and global style folders. On github, you will also have project documentation with Storybook <link>To learn more about Storybook, click here</link>.
+Through npm, you will have the production version, which contains only the components with their types, web fonts and global style folders. On github, you will also have project documentation with Storybook. <a href="https://storybook.js.org/">To learn more about Storybook, click here</a>.
 
-<b>Step 2: Import global styles: </b> The repository has a folder with your global styles, you must import it into your css layout file. If you are using the src folder and TypeScript, the path is usually src/app/layout.tsx
+<b>Step 2: Import global styles: </b> The repository has a folder with your global styles, you must import it into your css layout file. If you are using the src folder and TypeScript, the path is usually src/app/layout.tsx.
 ```
 import "sosec-ds/styles/globals.css"
 ```
@@ -86,7 +86,20 @@ content: [
   ]
 ```
 
-<h3>Use Instructions</h3>
+<b>Step 4: Transpile the package: </b> In your next.config file, add the 'sosec-ds' package to be transpiled.
+
+```
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  transpilePackages: ['sosec-ds']
+};
+
+export default nextConfig;
+
+```
+
+
+<h3 id="use">4 - Use Instructions</h3>
 
 <b>Import a Component Library:</b> This library contains REACT components, all components and types are in same path. You can import using:
 
