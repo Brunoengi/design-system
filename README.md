@@ -31,3 +31,77 @@ This repository is a design system for web and desktop applications designed for
 | Math Text |
 | Typography|  
 
+<h3>Installation Instructions</h3>
+
+<b>Step 1: Download de Project: </b> You can download the project with the npm dependency manager or through github <link>link here</link>. You can use create-next-app to have an initial configuration.
+
+```
+npm i sosec-ds
+```
+
+Through npm, you will have the production version, which contains only the components with their types, web fonts and global style folders. On github, you will also have project documentation with Storybook <link>To learn more about Storybook, click here</link>.
+
+<b>Step 2: Import global styles: </b> The repository has a folder with your global styles, you must import it into your css layout file. If you are using the src folder and TypeScript, the path is usually src/app/layout.tsx
+```
+import "sosec-ds/styles/globals.css"
+```
+
+<b>Step 3: Configure the tailwind.config file: </b> Based on tailwind documentation: <i>By default, any configuration you add in your own tailwind.config.js file is intelligently merged with the default configuration, with your own configuration acting as a set of overrides and extensions. The presets option lets you specify a different configuration to use as your base, making it easy to package up a set of customizations that you’d like to reuse across projects.</i>
+
+```
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  presets: [
+    require('sosec-ds/tailwind.config')
+  ],
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/sosec-ds/components/**/*.{js,ts,jsx,tsx,mdx}"
+  ],
+  theme: {
+  },
+  plugins: [],
+};
+export default config;
+
+```
+
+Above, an initial file is presented with the settings that must be added, note that it is necessary to insert a configuration in the presets and another configuration in the content.
+
+```
+presets: [
+    require('sosec-ds/tailwind.config')
+  ]
+```
+
+```
+content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/sosec-ds/components/**/*.{js,ts,jsx,tsx,mdx}" /* Here is the part that should be added */
+  ]
+```
+
+<h3>Use Instructions</h3>
+
+<b>Import a Component Library:</b> This library contains REACT components, all components and types are in same path. You can import using:
+
+```
+'use client';
+import { Button, ButtonProps } from "sosec-ds"
+import { Avatar, AvatarProps } from "sosec-ds"
+import { Box, BoxProps } from "sosec-ds"
+import { Disclosure, DisclosureProps } from "sosec-ds"
+import {Divider, DividerProps } from "sosec-ds"
+import {Input, InputProps } from "sosec-ds"
+import {InputGroup, InputGroupProps } from "sosec-ds"
+import {Math, MathProps } from "sosec-ds"
+import {Modal, ModalProps } from "sosec-ds" 
+import { Select, SelectProps } from "sosec-ds"
+import { Typography, TypographyProps} from "sosec-ds" 
+
+```
