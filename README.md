@@ -34,7 +34,6 @@ This repository is a design system for web and desktop applications designed for
 <h3 id="intallation">3 - Installation Instructions</h3>
 
 <b>Step 1: Download de Project: </b> You can download the project with the npm dependency manager or through github <link>link here</link>. You can use create-next-app to have an initial configuration.
-
 ```
 npm i sosec-ds
 ```
@@ -98,6 +97,7 @@ export default nextConfig;
 
 ```
 
+If you prefer, these steps are presented in a video on YouTube, to access, <a href="https://youtu.be/b07L5Jt13z4">click here.</a>
 
 <h3 id="use">4 - Use Instructions</h3>
 
@@ -118,3 +118,4 @@ import { Select, SelectProps } from "sosec-ds"
 import { Typography, TypographyProps} from "sosec-ds" 
 
 ```
+
