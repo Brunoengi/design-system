@@ -1,7 +1,7 @@
 <h1>SOSEC - Design System</h1> 
 
 [![TypeScript Version](https://img.shields.io/badge/TypeScript-^5-blue.svg)](https://shields.io/)
-[![NextJS Version](https://img.shields.io/badge/NextJS-14.2.3-black.svg)](https://shields.io/)
+[![ReactJS Version](https://img.shields.io/badge/ReactJS-^18-black.svg)](https://shields.io/)
 [![Tailwind Version](https://img.shields.io/badge/TailwindCSS-^3.4.1-red.svg)](https://shields.io/)
 [![Storybook Version](https://img.shields.io/badge/Storybook-^8.1.3-yellow.svg)](https://shields.io/)
 [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Brunoengi/design-system/LICENSE)
