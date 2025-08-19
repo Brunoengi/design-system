@@ -3,6 +3,8 @@ import { MathJaxContext, MathJax } from 'better-react-mathjax';
 import { MathJaxContextProps } from 'better-react-mathjax';
 import { MathJax3Config } from 'better-react-mathjax';
 
+
+
 export type MathProps = {
   MathExpression: string 
   
