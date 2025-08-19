@@ -30,6 +30,7 @@ This repository is a design system for web and desktop applications designed for
 | Input     |
 | Math Text |
 | Typography|  
+| Chart     | 
 
 <h3 id="intallation">3 - Installation Instructions</h3>
 
