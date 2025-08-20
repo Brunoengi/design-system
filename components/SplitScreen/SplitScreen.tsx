@@ -3,33 +3,33 @@ import classNames from 'classnames'
 
 interface SplitScreenProps {
   /**
-   * The panels to be rendered inside the component.
+   * Os painéis a serem renderizados dentro do componente.
    */
   children: React.ReactNode
   /**
-   * The layout direction of the panels.
+   * A direção do layout dos painéis.
    * @default 'horizontal'
    */
   direction?: 'horizontal' | 'vertical'
   /**
-   * A list of sizes for each panel.
-   * - Use a number for a proportional size (e.g., `[1, 2]` for a 1:2 ratio).
-   * - Use a string with a unit (e.g., `'200px'`, `'25%'`) for a fixed size.
-   * - If not provided, panels will be split equally.
+   * Uma lista de tamanhos para cada painel.
+   * - Use um número para um tamanho proporcional (ex: `[1, 2]` para uma proporção de 1:2).
+   * - Use uma string com unidade (ex: `'200px'`, `'25%'`) para um tamanho fixo.
+   * - Se não for fornecido, os painéis serão divididos igualmente.
    */
   sizes?: (string | number)[]
   /**
-   * Additional CSS classes for the main container.
+   * Classes CSS adicionais para o contêiner principal.
    */
   className?: string
 }
 
-const SplitScreen: React.FC<SplitScreenProps> = ({
+const SplitScreen = ({
   children,
   direction = 'horizontal',
   sizes,
   className
-}) => {
+}: SplitScreenProps) => {
   const childrenArray = React.Children.toArray(children)
 
   const containerClasses = classNames(
@@ -45,14 +45,14 @@ const SplitScreen: React.FC<SplitScreenProps> = ({
     <div className={containerClasses}>
       {childrenArray.map((child, index) => {
         const size = sizes?.[index]
-        let style: React.CSSProperties = { flex: '1 1 0%' } // Default: equal split
+        let style: React.CSSProperties = { flex: '1 1 0%' } // Padrão: divisão igual
 
         if (sizes && size !== undefined) {
           if (typeof size === 'number') {
-            // Treats the number as a growth proportion (flex-grow)
+            // Trata o número como uma proporção de crescimento (flex-grow)
             style = { flex: `${size} 1 0%` }
           } else if (typeof size === 'string') {
-            // Treats the string as a fixed basis (flex-basis)
+            // Trata a string como uma base fixa (flex-basis)
             style = { flex: `0 0 ${size}` }
           }
         }
