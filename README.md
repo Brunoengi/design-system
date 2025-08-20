@@ -26,8 +26,8 @@ This repository is a design system for web and desktop applications designed for
 | Avatar    | Disclosure  | Input Group |
 | Box       | Modal       |
 | Button    | Select      |
-| Divider   |
-| Input     |
+| Divider   | Table
+| Input     | Popover
 | Math Text |
 | Typography|  
 | Chart     | 
