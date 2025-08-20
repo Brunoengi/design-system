@@ -27,6 +27,7 @@ export const myTheme = {
       secondary: "rgba(var(--secondary), <alpha-value>)",
       tertiary: "rgba(var(--tertiary), <alpha-value>)",
       quaternary: "rgba(var(--quaternary), <alpha-value>)",
+      quinary: "rgba(var(--quinary), <alpha-value>)",
       success: "rgba(var(--success), <alpha-value>)",
       error: "rgba(var(--error), <alpha-value>)",
       warning: "rgba(var(--warning), <alpha-value>)",
@@ -35,8 +36,15 @@ export const myTheme = {
     backgroundColor: {
       light: "rgba(var(--bg-light), <alpha-value>)",
       dark: "rgba(var(--bg-dark), <alpha-value>)",
-      success: "rgba(var(--text-success), <alpha-value>)",
-      error: "rgba(var(--text-error), <alpha-value>)",
+      primary: "rgba(var(--primary), <alpha-value>)",
+      secondary: "rgba(var(--secondary), <alpha-value>)",
+      tertiary: "rgba(var(--tertiary), <alpha-value>)",
+      quaternary: "rgba(var(--quaternary), <alpha-value>)",
+      quinary: "rgba(var(--quinary), <alpha-value>)",
+      success: "rgba(var(--success), <alpha-value>)",
+      error: "rgba(var(--error), <alpha-value>)",
+      warning: "rgba(var(--warning), <alpha-value>)",
+      disabled: "rgba(var(--disabled), <alpha-value>)",
     },
     textColor: {
       gray: {
@@ -46,6 +54,7 @@ export const myTheme = {
       },
       success: "rgba(var(--text-success), <alpha-value>)",
       error: "rgba(var(--text-error), <alpha-value>)",
+      disabled: "rgba(var(--text-disabled), <alpha-value>)",
     },
     boxShadow: {
       sm: "var(--shadow-sm)",
@@ -64,6 +73,18 @@ export const myTheme = {
       md: "var(--border-radius-md)",
       lg: "var(--border-radius-lg)",
     },
+    spacing: {
+      none: "var(--spacing-none)",
+      "4xs": "var(--spacing-4xs)",
+      "2xs": "var(--spacing-2xs)",
+      xs: "var(--spacing-xs)",
+      sm: "var(--spacing-sm)",
+      md: "var(--spacing-md)",
+      lg: "var(--spacing-lg)",
+      xl: "var(--spacing-xl)",
+      "2xl": "var(--spacing-2xl)",
+      "4xl": "var(--spacing-4xl)",
+    },
   },
 }
 
@@ -77,5 +98,3 @@ const config: Config = {
   plugins: [],
 };
 export default config;
-
-

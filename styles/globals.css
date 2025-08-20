@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 
+
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -16,7 +18,7 @@ input[type=number] {
 
 @layer base {
 
-  * {
+  html, body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -55,6 +57,7 @@ input[type=number] {
     --secondary: 40, 40, 40;
     --tertiary: 80, 80, 80;
     --quaternary: 120, 120, 120;
+    --quinary: 160, 160, 160;
 
     --white: 255, 255, 255;
     --black: 0, 0, 0;
@@ -132,9 +135,22 @@ input[type=number] {
     --secondary: 128, 61, 59;
     --tertiary: 175, 130, 96;
     --quaternary: 228, 197, 158;
+    --quinary: 228, 222, 220;
+  }
+
+  .theme-dark {
+    --primary: 0, 0, 0;
+    --secondary: 35, 35, 35;
+    --tertiary: 70, 70, 70;
+    --quaternary: 105, 105, 105;
+    --quinary: 140, 140, 140;
+  }
+
+  .theme-pink {
+    --primary: 140, 40, 100;
+    --secondary: 190, 40, 100;
+    --tertiary: 255, 40, 100;
+    --quaternary: 255, 100, 130;
+    --quinary: 225, 160, 160;
   }
 }
-
-
-
-

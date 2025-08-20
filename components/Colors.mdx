@@ -2,36 +2,42 @@ import { Meta, ColorPalette, ColorItem } from "@storybook/blocks";
 
 <Meta title="Design Tokens/Colors" />
 
+## Paleta de Cores
+
+A paleta de cores do sistema é definida através de variáveis CSS e pode ser trocada aplicando uma classe de tema ao elemento raiz da sua aplicação (ou a qualquer contêiner).
+
 <ColorPalette>
   <ColorItem
-    title="Theme Dark - Default"
+    title="Tema Padrão (Dark)"
+    subtitle="Este é o tema padrão, sem necessidade de classe."
     colors={{
-      BgVeryDark: "rgb(0, 0, 0)",
-      BgDark: "rgb(35, 35, 35)",
-      BgMiddle: "rgb(70, 70, 70)",
-      BgLight: "rgb(105, 105, 105)",
-      BgVeryLight: "rgb(140, 140, 140)",
+      Primary: "rgb(0, 0, 0)",
+      Secondary: "rgb(35, 35, 35)",
+      Tertiary: "rgb(70, 70, 70)",
+      Quaternary: "rgb(105, 105, 105)",
+      Quinary: "rgb(140, 140, 140)",
     }}
   />
   <ColorItem
-    title="Theme Pink"
+    title="Tema Vintage"
+    subtitle="Use a classe .theme-vintage para aplicar."
     colors={{
-      BgVeryDark: 'rgb(140,40, 100)',
-      BgDark: "rgb(190, 40, 100)",
-      BgMiddle: "rgb(255, 40, 100)",
-      BgLight:"rgb(255, 100, 130)",
-      BgVeryLight: "rgb(225, 160, 160)"
+      Primary: "rgb(50, 44, 43)",
+      Secondary: "rgb(128, 61, 59)",
+      Tertiary: "rgb(175, 130, 96)",
+      Quaternary: "rgb(228, 197, 158)",
+      Quinary: "rgb(228, 222, 220)",
     }}
   />
   <ColorItem
-  title="Theme Vintage"
-  colors={{
-    BgVeryDark: "rgb(50, 44, 43)",
-    BgDark: "rgb(128, 61, 59)",
-    BgMiddle: "rgb(175, 130, 96)",
-    BgLight: "rgb(228, 197, 158)",
-    BgVeryLight: "rgb(228, 222, 220)"
+    title="Tema Pink"
+    subtitle="Use a classe .theme-pink para aplicar."
+    colors={{
+      Primary: "rgb(140, 40, 100)",
+      Secondary: "rgb(190, 40, 100)",
+      Tertiary: "rgb(255, 40, 100)",
+      Quaternary: "rgb(255, 100, 130)",
+      Quinary: "rgb(225, 160, 160)",
     }}
   />
 </ColorPalette>
-

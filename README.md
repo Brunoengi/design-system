@@ -21,16 +21,17 @@ This repository is a design system for web and desktop applications designed for
 
 <h3 id="component-list">2 - Component List</h3>
 
-| Atoms     | Molecules   | Organisms   | 
-| :---:     | :---:       | :---:       |
-| Avatar    | Disclosure  | Input Group |
-| Box       | Modal       |
-| Button    | Select      |
-| Divider   | Table
-| Input     | Popover
-| Math Text |
-| Typography|  
-| Chart     | 
+| Atoms       | Molecules   | Organisms   | 
+| :---:       | :---:       | :---:       |
+| Avatar      | Disclosure  | Input Group |
+| Box         | Modal       |
+| Button      | Select      |
+| Divider     | Table
+| Input       | Popover
+| Math Text   |
+| Typography  |  
+| Chart       | 
+| SplitScreen | 
 
 <h3 id="intallation">3 - Installation Instructions</h3>
 
