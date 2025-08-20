@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 
-interface SplitScreenProps {
+export type SplitScreenProps = {
   /**
    * Os painéis a serem renderizados dentro do componente.
    */

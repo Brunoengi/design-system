@@ -7,7 +7,7 @@ import {
   tdVariant,
 } from './Table.style';
 
-interface TableProps {
+export type TableProps = {
   columns: string[];
   data: Array<Record<string, React.ReactNode>>;
   maxRows?: number;
@@ -63,3 +63,5 @@ export function Table({
     </div>
   );
 }
+
+export default Table;

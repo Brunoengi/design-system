@@ -31,3 +31,9 @@ export { type SelectProps } from "./Select/Select"
 export { default as Typography } from "./Typography/Typography"
 export { type TypographyProps } from "./Typography/Typography"
 
+export { default as SplitScreen } from "./SplitScreen/SplitScreen"
+export { type SplitScreenProps } from "./SplitScreen/SplitScreen"
+
+export { default as Table } from "./Table/Table"
+export { type TableProps } from "./Table/Table"
+
