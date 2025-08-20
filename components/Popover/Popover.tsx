@@ -10,19 +10,19 @@ const placementClasses: Record<Placement, string> = {
   left: 'right-full top-1/2 -translate-y-1/2 mr-2',
 };
 
-interface PopoverMessageProps {
+export type PopoverMessageProps = {
   message: string;
   placement?: Placement;
   buttonLabel?: string;
   w?: string; // Tailwind width class, e.g., 'w-64', 'max-w-xs'
 }
 
-export function PopoverMessage({
+const PopoverMessage = ({
   message,
   placement = 'bottom',
   buttonLabel = 'Show Message',
   w = 'w-64',
-}: PopoverMessageProps) {
+}: PopoverMessageProps) => {
   return (
     <Popover className="relative inline-block">
       <Popover.Button as={Button}>
@@ -36,3 +36,5 @@ export function PopoverMessage({
     </Popover>
   );
 }
+
+export default PopoverMessage;

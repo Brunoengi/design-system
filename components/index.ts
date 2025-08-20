@@ -1,3 +1,4 @@
+
 export { default as Avatar } from "./Avatar/Avatar"
 export { type AvatarProps } from "./Avatar/Avatar"
 
@@ -39,6 +40,14 @@ export { type TableProps } from "./Table/Table"
 
 export { default as Panel } from "./Panel/Panel"
 export { type PanelProps } from "./Panel/Panel"
+
+export { default as PopoverMessage } from "./Popover/Popover"
+export { type PopoverMessageProps } from "./Popover/Popover"
+
+export { default as Sidebar } from "./Sidebar/Sidebar"
+export { type SidebarProps } from "./Sidebar/Sidebar"
+
+
 
 
 

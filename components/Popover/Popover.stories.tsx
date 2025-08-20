@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { PopoverMessage } from './Popover';
+import PopoverMessage, {PopoverMessageProps} from './Popover';
 
-const meta: Meta<typeof PopoverMessage> = {
+const meta: Meta<PopoverMessageProps> = {
   title: 'Design System/Molecules/Popover',
   component: PopoverMessage,
   argTypes: {
@@ -16,7 +16,7 @@ const meta: Meta<typeof PopoverMessage> = {
 
 export default meta;
 
-type Story = StoryObj<typeof PopoverMessage>;
+type Story = StoryObj<PopoverMessageProps>;
 
 export const Default: Story = {
   args: {

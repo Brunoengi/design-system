@@ -2,7 +2,7 @@ import React from "react";
 
 // --- Props ---
 // Podemos definir um tipo comum para as partes, já que compartilham props semelhantes.
-type SidebarPartProps = React.HTMLAttributes<HTMLDivElement>;
+ type SidebarPartProps = React.HTMLAttributes<HTMLDivElement>;
 
 // --- SidebarHeader ---
 const SidebarHeader = ({
@@ -48,23 +48,26 @@ const SidebarFooter = ({
 SidebarFooter.displayName = "Sidebar.Footer";
 
 // --- Sidebar (Root) ---
-type SidebarRootProps = React.HTMLAttributes<HTMLElement>;
+export type SidebarProps = React.HTMLAttributes<HTMLElement>;
+type SidebarComponent = React.FC<SidebarProps> & {
+  Header: React.FC<SidebarPartProps>;
+  Content: React.FC<SidebarPartProps>;
+  Footer: React.FC<SidebarPartProps>;
+};
 
-const SidebarRoot = ({ children, className, ...rest }: SidebarRootProps) => {
+const Sidebar: SidebarComponent = ({ children, className, ...rest }) => {
   return (
     <aside className={`sidebar ${className ?? ""}`} {...rest}>
       {children}
     </aside>
   );
 };
-SidebarRoot.displayName = "Sidebar";
+Sidebar.displayName = "Sidebar";
 
 // --- Export do Componente Composto ---
 // Isso permite uma API agradável como: <Sidebar.Header />, <Sidebar.Content />, etc.
-const Sidebar = Object.assign(SidebarRoot, {
-  Header: SidebarHeader,
-  Content: SidebarContent,
-  Footer: SidebarFooter,
-});
+Sidebar.Header = SidebarHeader;
+Sidebar.Content = SidebarContent;
+Sidebar.Footer = SidebarFooter;
 
 export default Sidebar;
