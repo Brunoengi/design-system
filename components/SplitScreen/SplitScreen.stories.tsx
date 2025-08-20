@@ -2,6 +2,7 @@ import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import SplitScreen from './SplitScreen'
 import classNames from 'classnames'
+import Panel from '../Panel/Panel'
 
 const meta: Meta<typeof SplitScreen> = {
   title: 'Design System/atoms/SplitScreen',
@@ -26,23 +27,6 @@ const meta: Meta<typeof SplitScreen> = {
 
 export default meta
 type Story = StoryObj<typeof SplitScreen>
-
-const Panel = ({
-  children,
-  className
-}: {
-  children: React.ReactNode
-  className?: string
-}) => (
-  <div
-    className={classNames(
-      'flex items-center justify-center p-4 border-tertiary h-full min-h-[200px] text-gray-secondary bg-light',
-      className
-    )}
-  >
-    {children}
-  </div>
-)
 
 export const HorizontalEqual: Story = {
   name: 'Horizontal (Divisão Igual)',

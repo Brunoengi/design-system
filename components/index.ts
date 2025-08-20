@@ -37,3 +37,8 @@ export { type SplitScreenProps } from "./SplitScreen/SplitScreen"
 export { default as Table } from "./Table/Table"
 export { type TableProps } from "./Table/Table"
 
+export { default as Panel } from "./Panel/Panel"
+export { type PanelProps } from "./Panel/Panel"
+
+
+
