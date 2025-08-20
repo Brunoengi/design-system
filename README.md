@@ -44,7 +44,7 @@ Through npm, you will have the production version, which contains only the compo
 
 <b>Step 2: Import global styles: </b> The repository has a folder with your global styles, you must import it into your css layout file. If you are using the src folder and TypeScript, the path is usually src/app/layout.tsx.
 ```
-import "sosec-ds/styles/globals.css"
+import 'sosec-ds/styles.css';
 ```
 
 <b>Step 3: Configure the tailwind.config file: </b> Based on tailwind documentation: <i>By default, any configuration you add in your own tailwind.config.js file is intelligently merged with the default configuration, with your own configuration acting as a set of overrides and extensions. The presets option lets you specify a different configuration to use as your base, making it easy to package up a set of customizations that you’d like to reuse across projects.</i>
