@@ -1,16 +1,19 @@
 {
   "name": "sosec-ds",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "private": false,
+  "style": "dist/styles.css",
   "files": [
-    "styles/globals.css",
-    "tailwind.config.ts",
-    "components/*",
-    "fonts/*"
+    "dist",
+    "components",
+    "fonts"
   ],
   "scripts": {
     "storybook": "storybook dev -p 6007",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "build:css": "tailwindcss -i ./styles/index.css -o ./dist/styles.css --minify",
+    "build": "npm run build:css",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "@headlessui/react": "^2.0.4",
@@ -49,6 +52,10 @@
   },
   "description": "Design System to web and desktop applications, with TypeScript + NextJS + Tailwind CSS",
   "main": "components/index.ts",
+  "exports": {
+    ".": "./components/index.ts",
+    "./style": "./dist/styles.css"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Brunoengi/design-system.git"
