@@ -1,6 +1,6 @@
 {
   "name": "sosec-ds",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "private": false,
   "style": "dist/styles.css",
   "files": [
@@ -11,7 +11,7 @@
   "scripts": {
     "storybook": "storybook dev -p 6007",
     "build-storybook": "storybook build",
-    "build:css": "tailwindcss -i ./styles/index.css -o ./dist/styles.css --minify",
+    "build:css": "tailwindcss -i ./styles/globals.css -o ./dist/styles.css --minify",
     "build": "npm run build:css",
     "prepublishOnly": "npm run build"
   },
