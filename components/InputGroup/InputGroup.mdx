@@ -1,24 +1,52 @@
-import { Meta, Controls, Primary, Canvas } from "@storybook/blocks"
-import * as Story from "./InputGroup.stories.tsx"
+import { Meta, Story, Canvas, ArgTypes } from '@storybook/blocks';
+import * as InputGroupStories from './InputGroup.stories';
 
-<Meta of={Story} />
+<Meta of={InputGroupStories} />
 
-# Input Group
+# InputGroup
 
-Input Group component
+O componente `InputGroup` permite adicionar prefixos, sufixos ou ícones a um campo de input, criando uma unidade visual coesa. É ideal para formulários que necessitam de contexto adicional, como unidades de medida, domínios de site ou ícones de identificação.
 
-### Select Group (Text + Select + Text)
+<Canvas>
+  <Story of={InputGroupStories.Default} />
+</Canvas>
 
-<Canvas of={Story.Steel} layout="centered" />
+## Exemplos de Uso
 
-### Select Group (Text + Select + Text)
+### Com Prefixo
 
-<Canvas of={Story.Concrete} layout="centered" />
+Útil para prefixos como `https://` em campos de URL.
 
-### Input Group (Text + Input + Text)
+<Canvas>
+  <Story of={InputGroupStories.WithPrefix} />
+</Canvas>
 
-<Canvas of={Story.Base} layout="centered" />
+### Com Sufixo
 
-## Interactive Documentation
-<Primary />
-<Controls />
+Ideal para sufixos como `.com` ou unidades de medida (kg, cm, etc).
+
+<Canvas>
+  <Story of={InputGroupStories.WithSuffix} />
+</Canvas>
+
+### Com Ícone
+
+Ícones ajudam a identificar visualmente o propósito do campo.
+
+<Canvas>
+  <Story of={InputGroupStories.WithIcon} />
+</Canvas>
+
+### Grupo Horizontal
+
+Combine múltiplos inputs, textos e addons para criar formulários complexos.
+
+<Canvas>
+  <Story of={InputGroupStories.HorizontalGroup} />
+</Canvas>
+
+## Propriedades
+
+A tabela abaixo detalha todas as propriedades disponíveis para o componente `InputGroup` e seus subcomponentes.
+
+<ArgTypes of={InputGroupStories} />
