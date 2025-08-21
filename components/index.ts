@@ -47,6 +47,11 @@ export { type PopoverMessageProps } from "./Popover/Popover"
 export { default as Sidebar } from "./Sidebar/Sidebar"
 export { type SidebarProps } from "./Sidebar/Sidebar"
 
+export { default as Title } from "./Title/Title"
+export { type TitleProps } from "./Title/Title"
+
+
+
 
 
 
