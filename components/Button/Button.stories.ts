@@ -30,7 +30,14 @@ const meta: Meta<ButtonProps> = {
     className: {
       type: "string"
     },
-    onClick: {action: 'clicked'}
+    onClick: {action: 'clicked'},
+    width: {
+      options: ['full', 'auto', 'fit','w-20', 'w-24', 'w-32', 'w-40', 'w-48', 'w-56', 'w-64'],
+      type: "string",
+      control: {
+        type: "select"
+      }
+    }
   },
 }
 

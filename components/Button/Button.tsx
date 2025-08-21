@@ -17,6 +17,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       // 1. Desestruturamos as props de variante para removê-las do `...rest`
       backgroundColor,
       borderRadius,
+      width,
       ...rest
     },
     ref
@@ -24,8 +25,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <button
         ref={ref}
-        // 2. Passamos as props de variante e a className para o CVA
-        className={ButtonVariant({ backgroundColor, borderRadius, className })}
+        // 2. Passamos TODAS as props de variante e a className para o CVA
+        className={ButtonVariant({ backgroundColor, borderRadius, width, className })}
         disabled={disabled}
         // 3. O `...rest` agora contém apenas atributos HTML válidos
         {...rest}
@@ -39,4 +40,3 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 Button.displayName = "Button";
 
 export default Button;
-
