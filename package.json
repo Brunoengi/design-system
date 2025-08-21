@@ -1,6 +1,6 @@
 {
   "name": "sosec-ds",
-  "version": "1.0.23",
+  "version": "1.0.24",
   "private": false,
   "style": "dist/styles.css",
   "files": [
