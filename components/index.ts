@@ -50,6 +50,9 @@ export { type SidebarProps } from "./Sidebar/Sidebar"
 export { default as Title } from "./Title/Title"
 export { type TitleProps } from "./Title/Title"
 
+export { default as Chart } from "./Chart/Chart"
+export { type ChartProps } from "./Chart/Chart"
+
 
 
 
