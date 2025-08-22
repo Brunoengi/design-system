@@ -158,38 +158,29 @@ const InputGroup: InputGroupComponent = ({
   const childrenArray = React.Children.toArray(children)
 
   const enhancedChildren = React.Children.map(childrenArray, (child, index) => {
-    if (!React.isValidElement(child)) {
+    if (!React.isValidElement(child) || !child.props) {
       return child
     }
 
-    const childType = (child.type as any).displayName
-    const isBordered =
-      childType === "InputGroup.Input" ||
-      childType === "InputGroup.Addon" ||
-      childType === "InputGroup.Select"
-
-    // Clona o filho, passando o estado `disabled`
-    const clonedChild = React.cloneElement(child, { disabled })
+    const isBordered = child.type === Input ||
+      child.type === Addon ||
+      child.type === SelectComponent
 
     if (!isBordered) {
-      return clonedChild
+      return React.cloneElement(child, { disabled })
     }
 
     const isFirst = index === 0
     const isLast = index === childrenArray.length - 1
 
     const newClassName = classNames(child.props.className, {
-      // Adiciona borda arredondada à esquerda se for o primeiro elemento
       "rounded-l-md": isFirst,
-      // Adiciona borda arredondada à direita se for o último elemento
       "rounded-r-md": isLast,
-      // Remove a borda esquerda e o arredondamento se não for o primeiro, para "grudar" no anterior
       "border-l-0 rounded-l-none": !isFirst,
-      // Remove o arredondamento direito se não for o último, para "grudar" no próximo
       "rounded-r-none": !isLast,
     })
 
-    return React.cloneElement(clonedChild, { className: newClassName })
+    return React.cloneElement(child, { disabled, className: newClassName })
   })
 
   return (
