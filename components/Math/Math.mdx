@@ -1,28 +1,35 @@
-import { Meta, Controls, Primary, Canvas } from "@storybook/blocks"
-import * as Story from "./Math.stories.ts"
+import { Meta, Canvas, Controls } from "@storybook/blocks";
+import * as MathStories from "./Math.stories.tsx";
 
-This is a asciimath text component.
+<Meta of={MathStories} />
 
-<Meta of={Story} />
+# Math Text (LaTeX)
 
-### Basic Operators
-<Canvas of={Story.BasicOperators} layout="centered" />
+O componente `Math` renderiza expressões matemáticas formatadas usando a biblioteca `react-katex`, que utiliza a sintaxe **LaTeX**.
 
-### Relation Symbols
-<Canvas of={Story.RelationsSymbols} layout="centered" />
+> ℹ️ Observação: Para que a renderização funcione, o CSS do KaTeX (`katex/dist/katex.min.css`) deve ser importado globalmente na aplicação ou no `preview.js` do Storybook.
 
-### Arrows
-<Canvas of={Story.Arrows} layout="centered" />
+<hr />
 
-### Greek Letters
-<Canvas of={Story.GreekLetters} layout="centered" />
+## Exemplos
 
-### Indices and subscripts
-<Canvas of={Story.Indices} layout="centered" />
+### Expressão Padrão
+<Canvas of={MathStories.Primary} layout="centered" />
+### Operadores Básicos
+<Canvas of={MathStories.BasicOperators} layout="centered" />
+### Símbolos de Relação
+<Canvas of={MathStories.RelationsSymbols} layout="centered" />
+### Setas
+<Canvas of={MathStories.Arrows} layout="centered" />
+### Letras Gregas
+<Canvas of={MathStories.GreekLetters} layout="centered" />
+### Índices e Subscritos
+<Canvas of={MathStories.Indices} layout="centered" />
+### Funções
+<Canvas of={MathStories.Functions} layout="centered" />
 
-### Functions
-<Canvas of={Story.Functions} layout="centered" />
+<hr />
 
-## Interactive Documentation
-<Primary />
+## Propriedades (Props)
+
 <Controls />

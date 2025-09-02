@@ -8,8 +8,8 @@ export { type BoxProps } from "./Box/Box"
 export { default as Button } from "./Button/Button"
 export { type ButtonProps } from "./Button/Button"
 
-export { default as Disclosure } from "./Disclosure/Disclosure"
-export { type DisclosureProps } from "./Disclosure/Disclosure"
+export { default as Disclosure } from "./Accordion/Accordion"
+export { type DisclosureProps } from "./Accordion/Accordion"
 
 export { default as Divider } from "./Divider/Divider"
 export { type DividerProps } from "./Divider/Divider"

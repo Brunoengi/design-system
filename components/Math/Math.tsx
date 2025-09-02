@@ -1,34 +1,36 @@
-import React from 'react'
-import { MathJax } from 'better-react-mathjax'
+import React from "react";
+import { InlineMath, BlockMath } from "react-katex";
+
+// Importante: O CSS do KaTeX deve ser importado em algum lugar global da sua aplicação
+// (como no App.tsx ou no preview.js do Storybook) para que as fórmulas sejam estilizadas corretamente.
+import "katex/dist/katex.min.css";
 
 export interface MathProps {
   /**
-   * A expressão matemática a ser renderizada, no formato AsciiMath.
-   * Exemplos: "a/b", "sqrt(4)", "x^2 + y_1"
+   * A expressão matemática a ser renderizada, no formato LaTeX.
+   * Exemplo: "\\frac{1}{2}", "x^2 + y_1"
    */
-  MathExpression: string
+  expression: string;
   /**
    * Se true, a expressão será renderizada inline (no meio do texto).
-   * Se false, será renderizada como um bloco de exibição.
+   * Se false, será renderizada como um bloco separado, geralmente centralizado.
    * @default false
    */
-  inline?: boolean
+  inline?: boolean;
 }
 
 /**
- * Um componente para renderizar expressões matemáticas usando MathJax.
- * Este componente DEVE ser usado dentro de um `MathJaxContext` provider.
+ * Componente para renderizar expressões matemáticas usando a biblioteca react-katex.
+ * Ele renderiza a expressão em formato LaTeX como um elemento inline ou de bloco.
  */
-const Math: React.FC<MathProps> = ({ MathExpression, inline = false }) => {
-  // A expressão é envolvida por crases para ser corretamente interpretada pelo AsciiMath.
-  const formattedExpression = `\`${MathExpression}\``
+const Math = ({ expression, inline = false }: MathProps) => {
+  if (inline) {
+    // Usa <InlineMath> para matemática que flui com o texto.
+    return <InlineMath math={expression} />;
+  }
 
-  return (
-    // A classe 'sosec-math-container' é usada em 'globals.css' para isolar os estilos do MathJax.
-    <span className="sosec-math-container">
-      <MathJax inline={inline}>{formattedExpression}</MathJax>
-    </span>
-  )
-}
+  // Usa <BlockMath> para matemática que ocupa sua própria linha.
+  return <BlockMath math={expression} />;
+};
 
-export default Math
+export default Math;

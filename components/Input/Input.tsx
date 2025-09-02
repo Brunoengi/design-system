@@ -1,43 +1,63 @@
-import React, { forwardRef } from "react"
-import { VariantProps } from "class-variance-authority"
-import { InputVariant } from "./Input.style"
+import React, { forwardRef } from 'react';
+import TextField, { TextFieldProps } from '@mui/material/TextField';
+import InputAdornment from '@mui/material/InputAdornment';
 
-// A forma mais limpa de definir as props é estender os atributos padrão do HTML
-// e adicionar as variantes do CVA.
-export type InputProps = VariantProps<typeof InputVariant> &
-  React.InputHTMLAttributes<HTMLInputElement>
+export type InputProps = Omit<TextFieldProps, 'InputProps'> & {
+  /**
+   * Adiciona um prefixo ao input. Útil para ícones ou unidades de medida.
+   */
+  startAdornment?: React.ReactNode;
+  /**
+   * Adiciona um sufixo ao input. Útil para ícones ou unidades de medida.
+   */
+  endAdornment?: React.ReactNode;
+};
 
-const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ type, className, onChange, ...rest }, ref) => {
-    // Handler customizado para permitir apenas a entrada de números.
+/**
+ * O componente Input é uma abstração sobre o TextField do Material-UI,
+ * com melhorias para inputs numéricos e fácil adição de prefixos/sufixos.
+ */
+const Input = forwardRef<HTMLDivElement, InputProps>(
+  ({ type, startAdornment, endAdornment, onChange, inputProps, ...rest }, ref) => {
     const handleNumericChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-      const value = e.target.value
-      // Permite apenas dígitos (0-9) ou um campo vazio.
+      const value = e.target.value;
       if (value === '' || /^[0-9\b]+$/.test(value)) {
-        // Dispara o evento onChange original se a validação passar.
-        onChange?.(e)
+        onChange?.(e);
       }
-    }
+    };
 
-    const isNumeric = type === 'number'
+    const isNumeric = type === 'number';
+
+    // A prop `InputProps` (com 'I' maiúsculo) é a forma correta de passar adornos
+    // para o TextField do Material-UI. O aviso de depreciação que você está vendo
+    // é um bug conhecido em versões mais antigas do @mui/material v5.
+    // A solução ideal é atualizar os pacotes do MUI.
+    const InputProps = {
+      startAdornment: startAdornment ? (
+        <InputAdornment position="start">{startAdornment}</InputAdornment>
+      ) : undefined,
+      endAdornment: endAdornment ? (
+        <InputAdornment position="end">{endAdornment}</InputAdornment>
+      ) : undefined,
+    };
 
     return (
-      <input
+      <TextField
         ref={ref}
-        // Para uma melhor experiência mobile, usamos inputMode e mudamos o tipo para 'text'
-        // para evitar os controles de seta padrão do navegador.
         type={isNumeric ? 'text' : type}
-        inputMode={isNumeric ? 'numeric' : undefined}
-        pattern={isNumeric ? '[0-9]*' : undefined}
-        // Usa o handler customizado para o tipo numérico
         onChange={isNumeric ? handleNumericChange : onChange}
-        className={`${InputVariant(rest as any)} ${className}`}
+        // A prop `inputProps` (com 'i' minúsculo) passa atributos para o elemento <input> nativo.
+        inputProps={{
+          ...(isNumeric && { inputMode: 'numeric', pattern: '[0-9]*' }),
+          ...inputProps,
+        }}
+        InputProps={InputProps}
         {...rest}
       />
-    )
-  }
-)
+    );
+  },
+);
 
-Input.displayName = 'Input'
+Input.displayName = 'Input';
 
-export default Input
+export default Input;

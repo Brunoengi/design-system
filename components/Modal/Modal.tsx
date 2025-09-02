@@ -1,58 +1,62 @@
-import { Dialog, Transition, DialogProps } from "@headlessui/react";
-import { XMarkIcon } from "@heroicons/react/24/outline";
-import React, { Fragment } from "react";
+import React from "react";
+import {
+  Dialog as MuiDialog,
+  DialogTitle,
+  DialogContent,
+  IconButton,
+  DialogProps as MuiDialogProps,
+} from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 
 export type ModalProps = {
+  /**
+   * O conteúdo a ser exibido dentro do modal.
+   */
   children: React.ReactNode;
+  /**
+   * Se `true`, o modal é exibido.
+   */
   isOpen: boolean;
+  /**
+   * O título exibido no cabeçalho do modal.
+   */
   title: string;
+  /**
+   * Função de callback disparada quando o modal solicita ser fechado.
+   */
   onClose: () => void;
-} & DialogProps<any> &
-  React.HTMLAttributes<HTMLDivElement>;
+  /**
+   * Determina a largura máxima do modal.
+   * @default 'sm'
+   */
+  maxWidth?: MuiDialogProps["maxWidth"];
+};
 
-const Modal = ({ children, isOpen, onClose, title }: ModalProps) => {
+/**
+ * O componente Modal exibe conteúdo em uma camada sobre o aplicativo,
+ * desativando a interação com a página principal.
+ */
+const Modal = ({
+  children,
+  isOpen,
+  onClose,
+  title,
+  maxWidth = "sm",
+}: ModalProps) => {
   return (
-    <Transition appear show={isOpen} as={Fragment}>
-      <Dialog as="div" className="relative z-10" onClose={onClose}>
-        <Transition.Child
-          as={Fragment}
-          enter="ease-out duration-300"
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
-          leave="ease-in duration-200"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
+    <MuiDialog onClose={onClose} open={isOpen} fullWidth maxWidth={maxWidth}>
+      <DialogTitle sx={{ m: 0, p: 2 }}>
+        {title}
+        <IconButton
+          aria-label="close"
+          onClick={onClose}
+          sx={{ position: "absolute", right: 8, top: 8, color: (theme) => theme.palette.grey[500] }}
         >
-          <div className="fixed inset-0 bg-black bg-opacity-25" />
-        </Transition.Child>
-
-        <div className="fixed inset-0 overflow-y-auto">
-          <div className="flex min-h-full items-center justify-center p-4">
-            <Transition.Child
-              as={Fragment}
-              enter="ease-out duration-300"
-              enterFrom="opacity-0 scale-95"
-              enterTo="opacity-100 scale-100"
-              leave="ease-in duration-200"
-              leaveFrom="opacity-100 scale-100"
-              leaveTo="opacity-0 scale-95"
-            >
-              <Dialog.Panel className="flex flex-col gap-5 w-full max-w-md transform overflow-hidden rounded-lg bg-white p-7 transition-all">
-                <div className="flex items-center justify-between">
-                  <Dialog.Title as="h3" className="text-lg font-semibold">
-                    {title}
-                  </Dialog.Title>
-                  <button onClick={onClose}>
-                    <XMarkIcon className="w-5 h-5 text-disabled" />
-                  </button>
-                </div>
-                {children}
-              </Dialog.Panel>
-            </Transition.Child>
-          </div>
-        </div>
-      </Dialog>
-    </Transition>
+          <CloseIcon />
+        </IconButton>
+      </DialogTitle>
+      <DialogContent dividers>{children}</DialogContent>
+    </MuiDialog>
   );
 };
 

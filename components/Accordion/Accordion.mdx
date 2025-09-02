@@ -1,0 +1,46 @@
+import { Meta, Canvas, Controls, Story } from "@storybook/blocks";
+import * as AccordionStories from "./Accordion.stories.tsx";
+
+<Meta of={AccordionStories} />
+
+# Accordion
+
+O componente `Accordion` permite ao usuário mostrar e esconder seções de conteúdo de forma organizada. É ideal para FAQs, menus e para economizar espaço em layouts complexos.
+
+## Uso Básico
+
+Este é o comportamento padrão do `Accordion`, onde múltiplos painéis podem ser abertos simultaneamente.
+
+<Canvas>
+  <Story of={AccordionStories.Default} />
+</Canvas>
+
+## Apenas um Painel Aberto
+
+Ao definir a prop `allowMultiple={false}`, apenas um painel pode ser expandido por vez. Abrir um novo painel fechará o anterior.
+
+<Canvas>
+  <Story of={AccordionStories.SinglePanelOpen} />
+</Canvas>
+
+## Com Painel Desabilitado
+
+Você pode desabilitar painéis específicos para impedir a interação do usuário.
+
+<Canvas>
+  <Story of={AccordionStories.WithDisabledPanel} />
+</Canvas>
+
+## Com Ícone Customizado
+
+Você também pode customizar o ícone de expansão passando um `React.ReactNode` para a prop `expandIcon`.
+
+<Canvas>
+  <Story of={AccordionStories.WithCustomIcon} />
+</Canvas>
+
+## Propriedades (Props)
+
+Abaixo você pode interagir com todas as propriedades do componente `Accordion`.
+
+<Controls />

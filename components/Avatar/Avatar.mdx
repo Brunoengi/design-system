@@ -1,19 +1,32 @@
-import { Meta, Primary, Canvas, Controls } from "@storybook/blocks";
+import { Meta, Canvas, Controls, Story } from "@storybook/blocks";
+import * as AvatarStories from "./Avatar.stories.tsx";
 
-import * as Story from "./Avatar.stories.ts";
-
-<Meta of={Story} />
+<Meta of={AvatarStories} title="Components/Avatar" />
 
 # Avatar
 
-Avatars can include images and icons
+Avatars são usados para representar um usuário e podem ser exibidos em diferentes tamanhos. Eles podem conter uma imagem ou as iniciais do nome.
 
-### Extra Small Avatar
-<Canvas of={Story.Xsmall} layout="centered" />
-### Large Avatar
-<Canvas of={Story.Large} layout="centered" />
+## Exemplos
 
-## Documentação Interativa
+### Avatar Extra Pequeno (Extra Small)
 
-<Primary />
+Esta é a menor variação do avatar, útil para listas e layouts densos.
+
+<Canvas>
+  <Story of={AvatarStories.ExtraSmall} />
+</Canvas>
+
+### Avatar Grande (Large)
+
+Esta é a maior variação do avatar, ideal para páginas de perfil.
+
+<Canvas>
+  <Story of={AvatarStories.Large} />
+</Canvas>
+
+## Propriedades (Props)
+
+Abaixo você pode interagir com todas as propriedades do componente `Avatar`.
+
 <Controls />

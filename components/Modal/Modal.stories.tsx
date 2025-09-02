@@ -1,61 +1,125 @@
 import React, { useState } from "react";
-import { Meta, StoryObj } from "@storybook/react";
-import Modal, { type ModalProps } from "./Modal";
-import Button from "../Button/Button";
-import Typography from "../Typography/Typography";
-
-
-const ModalStoryInfo = (args: ModalProps) => {
-  const [isOpen, setIsOpen] = useState(args.isOpen);
-  return (
-    <>
-      <Button onClick={() => setIsOpen(true)}>Abrir Modal</Button>
-      <Modal {...args} isOpen={isOpen} onClose={() => setIsOpen(false)}>
-        <Typography
-         size={'sm'}
-        >
-          Today, every company I talk to wants to implement a design system from
-          scratch. Unfortunately, the details of a design system are not
-          explored, so often they are not used to the maximum to create a useful
-          user experience.
-        </Typography>
-        <Typography>
-          New designers can take a look at any of the design patterns listed
-          below to learn best practices and make informed design decisions on
-          their projects.
-        </Typography>
-        <div className=" flex flex-col gap-3">
-          <Button onClick={() => setIsOpen(false)}>Primary Button</Button>
-          <Button onClick={() => setIsOpen(false)}>
-            Secondary Button
-          </Button>
-        </div>
-      </Modal>
-    </>
-  );
-};
+import type { Meta, StoryObj } from "@storybook/react";
+import Modal from "./Modal";
+import { Button, Typography, DialogActions } from "@mui/material";
 
 const meta: Meta<typeof Modal> = {
-  title: "Design System/Molecules/Modal",
+  title: "Components/Modal",
   component: Modal,
-  decorators: [
-    (Story) => (
-      <div style={{ margin: "3em" }}>
-        <Story />
-      </div>
-    ),
-  ],
+  parameters: {
+    layout: "centered",
+  },
+  argTypes: {
+    isOpen: {
+      control: false,
+      description: "Controla a visibilidade do modal. Gerenciado pela história.",
+    },
+    onClose: {
+      control: false,
+      description: "Função para fechar o modal. Gerenciada pela história.",
+    },
+    title: {
+      control: "text",
+      description: "O título exibido no cabeçalho do modal.",
+    },
+    children: {
+      control: false,
+      description: "O conteúdo a ser exibido dentro do modal.",
+    },
+    maxWidth: {
+      control: "select",
+      options: ["xs", "sm", "md", "lg", "xl", false],
+      description: "Determina a largura máxima do modal.",
+    },
+  },
+  args: {
+    title: "Título do Modal",
+    maxWidth: "sm",
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof Modal>;
 
-export const ModalInfo: Story = {
+// Template para gerenciar o estado de abertura do modal em cada história
+const ModalTemplate: Story["render"] = (args) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <>
+      <Button variant="contained" onClick={() => setIsOpen(true)}>
+        Abrir Modal
+      </Button>
+      <Modal {...args} isOpen={isOpen} onClose={() => setIsOpen(false)} />
+    </>
+  );
+};
+
+export const Default: Story = {
+  name: "Padrão",
   args: {
-    isOpen: false,
-    title: "Modal Info",
+    children: (
+      <Typography>
+        Este é o conteúdo do modal. Você pode colocar qualquer componente React
+        aqui dentro.
+      </Typography>
+    ),
   },
-  render: (args: ModalProps) => {
-    return <ModalStoryInfo {...args} />;
+  render: ModalTemplate,
+};
+
+export const WithLongContent: Story = {
+  name: "Com Conteúdo Longo",
+  args: {
+    title: "Termos de Serviço",
+    children: (
+      <>
+        <Typography gutterBottom>
+          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
+          consectetur ac, vestibulum at eros.
+        </Typography>
+        <Typography gutterBottom>
+          Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+          Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+        </Typography>
+        <Typography>
+          Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus
+          magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec
+          ullamcorper nulla non metus auctor fringilla.
+        </Typography>
+      </>
+    ),
   },
+  render: ModalTemplate,
+};
+
+export const WithActions: Story = {
+  name: "Com Ações no Rodapé",
+  args: {
+    title: "Confirmar Ação",
+    children: (
+      <>
+        <Typography>
+          Você tem certeza que deseja executar esta ação? Esta operação não pode
+          ser desfeita.
+        </Typography>
+        <DialogActions>
+          <Button>Cancelar</Button>
+          <Button variant="contained">Confirmar</Button>
+        </DialogActions>
+      </>
+    ),
+  },
+  render: ModalTemplate,
+};
+
+export const Large: Story = {
+  name: "Tamanho Grande (lg)",
+  args: {
+    ...Default.args,
+    title: "Modal Grande",
+    maxWidth: "lg",
+  },
+  render: ModalTemplate,
 };

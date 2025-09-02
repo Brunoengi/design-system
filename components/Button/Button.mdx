@@ -1,6 +1,6 @@
 import { Meta, Controls, Primary, Canvas } from "@storybook/blocks"
 
-import * as Story from "./Button.stories.ts"
+import * as Story from "./Button.stories.tsx"
 
 <Meta of={Story} />
 
@@ -8,16 +8,16 @@ import * as Story from "./Button.stories.ts"
 
 This is a button component, used to trigger actions
 
-### Success with border
-<Canvas of={Story.Sucess} layout="centered" />
-### Warning without border
+### Success Color
+<Canvas of={Story.Success} layout="centered" />
+### Warning Color
 <Canvas of={Story.Warning} layout="centered" />
-### Error with much border
+### Error Color
 <Canvas of={Story.Error} layout="centered" />
-### Disabled without border
+### Disabled State
 <Canvas of={Story.Disabled} layout="centered" />
-### Secondary - Theme Vintage
-<Canvas of={Story.SecondaryThemeVintage} layout="centered" />
+### Outlined Variant
+<Canvas of={Story.Outlined} layout="centered" />
 
 ## Interactive Document
 <Primary />

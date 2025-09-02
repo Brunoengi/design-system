@@ -1,13 +1,44 @@
-import { Meta, Primary, Canvas, Controls } from "@storybook/blocks";
+import { Meta, Story, Canvas, Controls } from "@storybook/blocks";
+import * as ModalStories from "./Modal.stories.tsx";
 
-import * as Story from "./Modal.stories.tsx";
-
-<Meta of={Story} />
+<Meta of={ModalStories} />
 
 # Modal
 
-This is a modal component.
+O componente `Modal` (ou `Dialog`) exibe conteúdo em uma camada sobre o aplicativo, desativando a interação com a página principal até que uma ação seja tomada ou o modal seja fechado.
 
-### Modal Info
+## Uso Básico
 
-<Canvas of={Story.ModalInfo} layout="centered" />
+Este é um exemplo de um modal padrão com um texto simples.
+
+<Canvas>
+  <Story of={ModalStories.Default} />
+</Canvas>
+
+## Com Conteúdo Longo
+
+Quando o conteúdo excede a altura do modal, uma barra de rolagem é adicionada automaticamente.
+
+<Canvas>
+  <Story of={ModalStories.WithLongContent} />
+</Canvas>
+
+## Com Ações no Rodapé
+
+É comum adicionar botões de ação no rodapé do modal. Você pode fazer isso utilizando o componente `DialogActions` do Material-UI.
+
+<Canvas>
+  <Story of={ModalStories.WithActions} />
+</Canvas>
+
+## Tamanho
+
+Você pode controlar a largura do modal usando a prop `maxWidth`.
+
+<Canvas>
+  <Story of={ModalStories.Large} />
+</Canvas>
+
+## Propriedades (Props)
+
+<Controls />

@@ -1,41 +1,53 @@
-import {cva, type VariantProps} from "class-variance-authority"
-import AvatarIcon from "./AvatarIcon";
-import AvatarImage from "./AvatarImage";
-import classNames from "classnames";
+import React from 'react';
+import MuiAvatar, { type AvatarProps as MuiAvatarProps } from '@mui/material/Avatar';
+import { type SxProps, type Theme } from '@mui/material/styles';
 
-const AvatarVariants = cva('', {
-  variants: {
-    size: {
-      xs: ['w-5', 'h-5'],
-      sm: ['w-6', 'h-6'],
-      md: ['w-7', 'h-7'],
-      lg: ['w-8', 'h-8']
-    }
-  },
-  defaultVariants: {
-    size: 'xs'
-  }
-})
+// Define um mapa de tamanhos customizados que serão convertidos para a prop `sx` do MUI.
+const sizeMap = {
+  xs: { width: 20, height: 20, fontSize: '0.625rem' }, // 20px
+  sm: { width: 24, height: 24, fontSize: '0.75rem' },  // 24px
+  md: { width: 32, height: 32, fontSize: '0.875rem' },  // 32px
+  lg: { width: 40, height: 40, fontSize: '1rem' },      // 40px (padrão do MUI)
+};
 
-export type AvatarProps = VariantProps<typeof AvatarVariants> & {
-  image?: string,
-  description?: string
-} & React.HTMLAttributes<HTMLDivElement>
+// Define as props para o nosso componente customizado de Avatar.
+// Ele herda as props do Avatar do Material-UI, mas omite `src` e `alt` para
+// substituí-los por `image` e `description` para manter a consistência.
+export interface AvatarProps extends Omit<MuiAvatarProps, 'src' | 'alt'> {
+  /**
+   * O caminho para a imagem.
+   */
+  image?: string;
+  /**
+   * O texto alternativo para a imagem. Também usado para gerar as iniciais se a imagem falhar.
+   */
+  description?: string;
+  /**
+   * O tamanho do avatar.
+   * @default 'md'
+   */
+  size?: keyof typeof sizeMap;
+}
 
-const Avatar = ({ size = 'sm',image, description='', className, ...rest }: AvatarProps) => {
+/**
+ * Componente Avatar construído sobre o Avatar do Material-UI.
+ * Suporta imagens, ícones ou letras como conteúdo.
+ */
+const Avatar: React.FC<AvatarProps> = ({
+  image,
+  description = '',
+  size = 'md',
+  children,
+  sx,
+  ...rest
+}) => {
+  // Combina os estilos de tamanho customizados com qualquer `sx` prop passada.
+  const combinedSx: SxProps<Theme> = { ...sizeMap[size], ...sx };
 
-  const avatarComponent = image ? (
-    <AvatarImage src={image} altDescription={description}/>
-  ) : (
-    <AvatarIcon />
-  )
+  // Se `children` não for fornecido, tenta gerar iniciais a partir da `description`.
+  const avatarChildren = children || (description ? description.charAt(0).toUpperCase() : null);
 
-  return <div
-  {...rest}
-  className={`${AvatarVariants({ size })} ${classNames(['rounded-full', 'flex', 'justify-center', 'text-slate-400'])} ${className}`}
-  >
-    {avatarComponent}
-  </div>
+  return <MuiAvatar src={image} alt={description} sx={combinedSx} {...rest}>{avatarChildren}</MuiAvatar>;
 }
 
 export default Avatar
