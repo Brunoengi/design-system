@@ -1,57 +1,46 @@
 
-export { default as Avatar } from "./Avatar/Avatar"
-export { type AvatarProps } from "./Avatar/Avatar"
+export { default as Avatar } from "./dataDisplay/Avatar/Avatar"
+export { type AvatarProps } from "./dataDisplay/Avatar/Avatar"
 
-export { default as Box } from "./Box/Box"
-export { type BoxProps } from "./Box/Box"
+export { default as Button } from "./input/Button/Button"
+export { type ButtonProps } from "./input/Button/Button"
 
-export { default as Button } from "./Button/Button"
-export { type ButtonProps } from "./Button/Button"
+export { default as Accordion } from "./surface/Accordion/Accordion"
+export { type AccordionProps } from "./surface/Accordion/Accordion"
 
-export { default as Disclosure } from "./Accordion/Accordion"
-export { type DisclosureProps } from "./Accordion/Accordion"
+export { default as Input } from "./input/Input/Input"
+export { type InputProps } from "./input/Input/Input"
 
-export { default as Divider } from "./Divider/Divider"
-export { type DividerProps } from "./Divider/Divider"
+export { default as InputGroup } from "./input/InputGroup/InputGroup"
+export { type InputGroupProps } from "./input/InputGroup/InputGroup"
 
-export { default as Input } from "./Input/Input"
-export { type InputProps } from "./Input/Input"
+export { default as Math } from "./dataDisplay/Math/Math"
+export { type MathProps } from "./dataDisplay/Math/Math"
 
-export { default as InputGroup } from "./InputGroup/InputGroup"
-export { type InputGroupProps } from "./InputGroup/InputGroup"
+export { default as Modal } from "./layout/Modal/Modal"
+export { type ModalProps } from "./layout/Modal/Modal"
 
-export { default as Math } from "./Math/Math"
-export { type MathProps } from "./Math/Math"
+export { default as Select } from "./input/Select/Select"
+export { type SelectProps } from "./input/Select/Select"
 
-export { default as Modal } from "./Modal/Modal"
-export { type ModalProps } from "./Modal/Modal"
+export { default as Typography } from "./dataDisplay/Typography/Typography"
+export { type TypographyProps } from "./dataDisplay/Typography/Typography"
 
-export { default as Select } from "./Select/Select"
-export { type SelectProps } from "./Select/Select"
+export { default as Table } from "./dataDisplay/Table/Table"
+export { type TableProps } from "./dataDisplay/Table/Table"
 
-export { default as Typography } from "./Typography/Typography"
-export { type TypographyProps } from "./Typography/Typography"
 
-export { default as SplitScreen } from "./SplitScreen/SplitScreen"
-export { type SplitScreenProps } from "./SplitScreen/SplitScreen"
+export { default as Popover } from "./util/Popover/Popover"
+export { type PopoverProps } from "./util/Popover/Popover"
 
-export { default as Table } from "./Table/Table"
-export { type TableProps } from "./Table/Table"
+export { default as Sidebar } from "./surface/Sidebar/Sidebar"
+export { type SidebarProps } from "./surface/Sidebar/Sidebar"
 
-export { default as Panel } from "./Panel/Panel"
-export { type PanelProps } from "./Panel/Panel"
+export { default as Title } from "./dataDisplay/Title/Title"
+export { type TitleProps } from "./dataDisplay/Title/Title"
 
-export { default as PopoverMessage } from "./Popover/Popover"
-export { type PopoverMessageProps } from "./Popover/Popover"
-
-export { default as Sidebar } from "./Sidebar/Sidebar"
-export { type SidebarProps } from "./Sidebar/Sidebar"
-
-export { default as Title } from "./Title/Title"
-export { type TitleProps } from "./Title/Title"
-
-export { default as Chart } from "./Chart/Chart"
-export { type ChartProps } from "./Chart/Chart"
+export { default as Chart } from "./dataDisplay/Chart/Chart"
+export { type ChartProps } from "./dataDisplay/Chart/Chart"
 
 
 

@@ -1,0 +1,121 @@
+import { Meta, StoryObj } from "@storybook/react"
+import Button from "./Button"
+// É melhor inferir as props diretamente do componente para garantir a consistência.
+
+const meta: Meta<typeof Button> = {
+  title: 'Input/Button',
+  component: Button,
+  parameters: {
+    layout: 'centered',
+  },
+  argTypes: {
+    children: {
+      type: "string"
+    },
+    variant: {
+      options: ['contained', 'outlined', 'text'],
+      control: {
+        type: 'radio'
+      }
+    },
+    color: {
+      options: ['primary', 'secondary', 'success', 'error', 'info', 'warning'],
+      control: {
+        type: 'select'
+      }
+    },
+    size: {
+      options: ['small', 'medium', 'large'],
+      control: {
+        type: 'radio'
+      }
+    },
+    disabled: {
+      type: "boolean"
+    },
+    className: {
+      type: "string"
+    },
+    borderRadius: {
+      options: ['none', 'sm', 'md', 'lg', 'full'],
+      control: {
+        type: 'select'
+      },
+      description: 'Define o raio da borda do botão.'
+    },
+    onClick: { action: 'clicked' },
+  },
+  args: {
+    children: 'Button',
+    variant: 'contained',
+    color: 'primary',
+    size: 'medium',
+    borderRadius: 'sm',
+    disabled: false,
+  },
+}
+
+export default meta
+
+type Story = StoryObj<typeof meta>;
+
+export const Contained: Story = {
+  args: {
+  }
+}
+
+export const Outlined: Story = {
+  args: {
+    variant: 'outlined',
+  }
+}
+
+export const Text: Story = {
+  args: {
+    variant: 'text',
+  }
+}
+
+export const Success: Story = {
+  args: {
+    color: 'success'
+  }
+}
+
+export const Warning: Story = {
+  args: {
+    color: 'warning',
+  }
+}
+
+export const Error: Story = {
+  args: {
+    color: 'error',
+  }
+}
+
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+  }
+}
+
+export const Large: Story = {
+  args: {
+    size: 'large',
+  }
+}
+
+export const Small: Story = {
+  args: {
+    size: 'small',
+  }
+}
+
+export const Pill: Story = {
+  name: 'Com Borda Arredondada (Pill)',
+  args: {
+    borderRadius: 'full',
+    children: 'Pill Button'
+  }
+}

@@ -1,0 +1,42 @@
+import { Meta, Title, Description, Primary, Controls, Story, Canvas } from '@storybook/blocks';
+import * as SelectStories from './Select.stories';
+
+<Meta of={SelectStories} />
+
+<Title />
+
+<Description>
+  O componente `Select` permite que os usuários escolham um valor de uma lista de opções. Ele é construído sobre os componentes `FormControl` e `Select` do Material-UI, garantindo acessibilidade e uma experiência de usuário consistente. Suporta opções simples, agrupadas e desabilitadas.
+</Description>
+
+## Exemplo Interativo
+
+<Primary />
+
+<Controls />
+
+## Outros Exemplos
+
+### Com Grupos de Opções
+
+O `Select` pode renderizar opções dentro de grupos (`optgroup`) para uma melhor organização.
+
+<Canvas>
+  <Story of={SelectStories.WithOptgroup} />
+</Canvas>
+
+### Com Estado de Erro
+
+A prop `error` pode ser usada para indicar que o campo tem um erro de validação, geralmente acompanhada de um `helperText`.
+
+<Canvas>
+  <Story of={SelectStories.WithError} />
+</Canvas>
+
+### Desabilitado
+
+O componente pode ser completamente desabilitado usando a prop `disabled`.
+
+<Canvas>
+  <Story of={SelectStories.Disabled} />
+</Canvas>

@@ -1,0 +1,41 @@
+import { Meta, Title, Description, Primary, Controls, Story, Canvas } from "@storybook/blocks"
+
+import * as TypographyStories from "./Typography.stories"
+
+<Meta of={TypographyStories} />
+
+<Title />
+
+<Description>
+  O componente `Typography` é usado para padronizar os textos da aplicação, garantindo consistência visual e hierarquia semântica. Ele é um wrapper direto do componente `Typography` do Material-UI, herdando toda a sua poderosa API, incluindo variantes, alinhamento e espaçamento.
+</Description>
+
+## Exemplo Interativo
+
+<Primary />
+
+<Controls />
+
+## Exemplos de Variantes
+
+A prop `variant` é a forma principal de controlar a aparência do texto, aplicando os estilos predefinidos do tema.
+
+### Títulos (Headings)
+
+<Canvas>
+  <Story of={TypographyStories.Heading1} />
+  <Story of={TypographyStories.Heading2} />
+</Canvas>
+
+### Subtítulo e Corpo de Texto
+
+<Canvas>
+  <Story of={TypographyStories.Subtitle} />
+  <Story of={TypographyStories.BodyAsParagraph} />
+</Canvas>
+
+### Outros Estilos
+
+<Canvas>
+  <Story of={TypographyStories.Overline} />
+</Canvas>

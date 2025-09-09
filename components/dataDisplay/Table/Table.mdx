@@ -1,0 +1,41 @@
+import { Meta, Title, Description, Primary, Controls, Story } from '@storybook/blocks';
+import * as TableStories from './Table.stories';
+
+<Meta of={TableStories} />
+
+<Title />
+
+<Description>
+  O componente `Table` é uma ferramenta poderosa e flexível para exibir conjuntos de dados tabulares. Construído sobre os componentes de Tabela do Material-UI, ele oferece recursos avançados como ordenação por coluna, paginação e um design responsivo e limpo.
+</Description>
+
+<Primary />
+
+<Controls />
+
+## Histórias
+
+### Padrão
+A visualização padrão da tabela, demonstrando a paginação e a funcionalidade de ordenação por clique no cabeçalho da coluna.
+
+<Story of={TableStories.Default} />
+
+### Listrada e Pequena (`striped` & `size="small"`)
+Uma variação mais compacta (`size="small"`) com linhas alternadas coloridas (`striped`) para melhor legibilidade em conjuntos de dados densos.
+
+<Story of={TableStories.StripedAndSmall} />
+
+### Cabeçalho Fixo (`stickyHeader`)
+Para tabelas longas, o cabeçalho pode ser fixado no topo (`stickyHeader`) para manter o contexto das colunas visível durante a rolagem vertical. A estória abaixo está contida em um `div` com altura fixa para demonstrar o efeito.
+
+<Story of={TableStories.StickyHeader} />
+
+### Tabela Vazia
+Demonstra como a tabela se comporta quando não há dados (`data` é um array vazio), exibindo uma mensagem customizável.
+
+<Story of={TableStories.Empty} />
+
+### Com Coluna de ID
+Esta estória demonstra a tabela com uma coluna de ID numérica, que também pode ser usada para ordenação. Os dados desta estória incluem uma propriedade `id` única para cada linha, que o componente utiliza internamente como a `key` do React para otimização da renderização.
+
+<Story of={TableStories.WithIdColumn} />
