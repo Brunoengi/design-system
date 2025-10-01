@@ -1,6 +1,6 @@
 {
   "name": "sosec-ds",
-  "version": "1.0.28",
+  "version": "1.0.30",
   "private": false,
   "style": "dist/styles.css",
   "files": [
@@ -11,8 +11,9 @@
   "scripts": {
     "storybook": "storybook dev -p 6007",
     "build-storybook": "storybook build",
+    "build:ts": "tsc",
     "build:css": "tailwindcss -i ./styles/globals.css -o ./dist/styles.css --minify",
-    "build": "npm run build:css",
+    "build": "npm run build:ts && npm run build:css",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
@@ -58,9 +59,10 @@
     "typescript": "^5"
   },
   "description": "Design System to web and desktop applications, with TypeScript + NextJS + Tailwind CSS",
-  "main": "components/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "exports": {
-    ".": "./components/index.ts",
+    ".": "./dist/index.js",
     "./styles.css": "./dist/styles.css"
   },
   "repository": {

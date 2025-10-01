@@ -1,0 +1,15 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import { Box as MuiBox } from '@mui/material';
+declare const meta: Meta<typeof MuiBox>;
+export default meta;
+type Story = StoryObj<typeof MuiBox>;
+export declare const JustifyContent: Story;
+export declare const MainContentAndFooter: Story;
+export declare const AlignItems: Story;
+export declare const FlexDirection: Story;
+export declare const FlexWrap: Story;
+export declare const AlignContent: Story;
+export declare const FlexFlow: Story;
+export declare const FlexGrow: Story;
+export declare const FlexShrink: Story;
+export declare const FlexBasis: Story;

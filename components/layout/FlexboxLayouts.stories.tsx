@@ -327,7 +327,9 @@ export const FlexGrow: Story = {
       }}
     >
       <StyledBox sx={{ flexGrow: 1 }}>Item 1 (grow: 1)</StyledBox>
-      <StyledBox sx={{ flexGrow: args.flexGrow, bgcolor: 'secondary.main' }}>Item 2 (grow: {args.flexGrow})</StyledBox>
+      <StyledBox sx={{ flexGrow: args.flexGrow, bgcolor: 'secondary.main' }}>
+        Item 2 (grow: {String(args.flexGrow)})
+      </StyledBox>
       <StyledBox sx={{ flexGrow: 1 }}>Item 3 (grow: 1)</StyledBox>
     </Box>
   ),
@@ -355,9 +357,9 @@ export const FlexShrink: Story = {
           gap: args.gap,
         }}
       >
-        <StyledBox sx={{ flexShrink: args.flexShrink, width: 250 }}>Item 1 (shrink: {args.flexShrink})</StyledBox>
+        <StyledBox sx={{ flexShrink: args.flexShrink, width: 250 }}>Item 1 (shrink: {String(args.flexShrink)})</StyledBox>
         <StyledBox sx={{ flexShrink: 1, width: 250, bgcolor: 'secondary.main' }}>Item 2 (shrink: 1)</StyledBox>
-        <StyledBox sx={{ flexShrink: args.flexShrink, width: 250 }}>Item 3 (shrink: {args.flexShrink})</StyledBox>
+        <StyledBox sx={{ flexShrink: args.flexShrink, width: 250 }}>Item 3 (shrink: {String(args.flexShrink)})</StyledBox>
       </Box>
     </Box>
   ),
@@ -383,7 +385,7 @@ export const FlexBasis: Story = {
     >
       <StyledBox sx={{ flexGrow: 1, flexBasis: '100px' }}>Item 1 (basis: 100px)</StyledBox>
       <StyledBox sx={{ flexGrow: 1, flexBasis: '100px' }}>Item 2 (basis: 100px)</StyledBox>
-      <StyledBox sx={{ flexGrow: 1, flexBasis: args.flexBasis, bgcolor: 'secondary.main' }}>Item 3 (basis: {args.flexBasis})</StyledBox>
+      <StyledBox sx={{ flexGrow: 1, flexBasis: args.flexBasis, bgcolor: 'secondary.main' }}>Item 3 (basis: {String(args.flexBasis)})</StyledBox>
     </Box>
   ),
   args: {

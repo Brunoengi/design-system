@@ -114,7 +114,7 @@ const Input = forwardRef<HTMLDivElement, InputProps>(
           }
         : {};
 
-    const customBorderSx: SxProps<Theme> = {};
+    const customBorderSx: Record<string, any> = {};
     const fieldsetSx: Record<string, any> = {};
 
     // Lógica para o raio da borda
@@ -133,7 +133,11 @@ const Input = forwardRef<HTMLDivElement, InputProps>(
           radiusValue = theme.shape.borderRadius; // ex: 4px
           break;
         case 'lg':
-          radiusValue = theme.shape.borderRadius * 2; // ex: 8px
+          const baseRadius =
+            typeof theme.shape.borderRadius === 'string'
+              ? parseFloat(theme.shape.borderRadius)
+              : theme.shape.borderRadius;
+          radiusValue = baseRadius * 2; // ex: 8px
           break;
         case 'full':
           radiusValue = 9999; // Formato "Pill"
@@ -158,10 +162,10 @@ const Input = forwardRef<HTMLDivElement, InputProps>(
 
     // Lógica para os lados da borda
     if (borders) {
-      const allSides = ['top', 'right', 'bottom', 'left'];
+      const allSides = ['top', 'right', 'bottom', 'left'] as const;
       allSides.forEach(side => {
         const key = `border${side.charAt(0).toUpperCase() + side.slice(1)}Width`;
-        if (!borders.includes(side as (typeof allSides)[number])) {
+        if (!borders.includes(side)) {
           fieldsetSx[key] = 0;
         }
       });
@@ -181,7 +185,7 @@ const Input = forwardRef<HTMLDivElement, InputProps>(
       customBorderSx['& .MuiOutlinedInput-notchedOutline'] = { ...fieldsetSx };
     }
 
-    const widthStyle: SxProps<Theme> = {};
+    const widthStyle: Record<string, any> = {};
     if (maxLength) {
       // Ajusta a largura com base no maxLength.
       // A unidade 'ch' é aproximadamente a largura do caractere '0'.

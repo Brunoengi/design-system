@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, Key } from 'react';
 import {
   Box,
   Table as MuiTable,
@@ -13,9 +13,11 @@ import {
 } from '@mui/material';
 import { visuallyHidden } from '@mui/utils';
 
-// Helper functions for sorting from Material-UI documentation
-function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
-  if (b[orderBy] < a[orderBy]) {
+// Tipagem para os dados da linha, garantindo que 'id' seja um tipo válido para a chave React.
+type RowData = { id?: Key } & Record<string, any>;
+
+function descendingComparator<T extends RowData>(a: T, b: T, orderBy: keyof T) {
+  if (b[orderBy] < a[orderBy]) { // A comparação aqui pode ser aprimorada para lidar com diferentes tipos de dados
     return -1;
   }
   if (b[orderBy] > a[orderBy]) {
@@ -26,13 +28,10 @@ function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
 
 type Order = 'asc' | 'desc';
 
-function getComparator<Key extends keyof any>(
+function getComparator<T extends RowData>(
   order: Order,
-  orderBy: Key,
-): (
-  a: { [key in Key]: number | string | React.ReactNode },
-  b: { [key in Key]: number | string | React.ReactNode },
-) => number {
+  orderBy: keyof T,
+): (a: T, b: T) => number {
   return order === 'desc'
     ? (a, b) => descendingComparator(a, b, orderBy)
     : (a, b) => -descendingComparator(a, b, orderBy);
@@ -102,8 +101,8 @@ function EnhancedTableHead(props: EnhancedTableProps) {
 }
 
 export type TableProps = {
-  columns: HeadCell[];
-  data: Array<Record<string, any>>;
+  columns: readonly HeadCell[];
+  data: readonly RowData[];
   emptyMessage?: string;
   size?: 'small' | 'medium';
   striped?: boolean;
@@ -168,7 +167,7 @@ export function Table({
             {visibleRows.length > 0 ? (
               visibleRows.map((row, index) => (
                 <TableRow
-                  key={row.id ?? index}
+                  key={row.id ?? index} // Agora 'row.id' tem o tipo correto (Key)
                   hover
                   sx={
                     striped

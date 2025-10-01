@@ -1,0 +1,13 @@
+import type { Meta, StoryObj } from "@storybook/react";
+import Math from "./Math";
+import "katex/dist/katex.min.css";
+declare const meta: Meta<typeof Math>;
+export default meta;
+type Story = StoryObj<typeof Math>;
+export declare const Primary: Story;
+export declare const BasicOperators: Story;
+export declare const RelationsSymbols: Story;
+export declare const Arrows: Story;
+export declare const GreekLetters: Story;
+export declare const Indices: Story;
+export declare const Functions: Story;

@@ -45,8 +45,8 @@ export const FloatingSidebarWithTeamPanel: Story = {
         title: ['Líder de', 'Desenvolvimento'],
         showAvatar: false,
         socials: [
-          { network: 'linkedin', url: '#' },
-          { network: 'github', url: '#' },
+          { network: 'linkedin' as const, url: '#' },
+          { network: 'github' as const, url: '#' },
         ],
       },
     ]
@@ -57,15 +57,15 @@ export const FloatingSidebarWithTeamPanel: Story = {
         title: ['Orientador', 'Técnico'],
         showAvatar: false,
         socials: [
-          { network: 'linkedin', url: '#' },
-          { network: 'website', url: '#' },
+          { network: 'linkedin' as const, url: '#' },
+          { network: 'website' as const, url: '#' },
         ],
       },
       {
         name: 'Mariana Silva',
         title: ['Orientadora', 'Acadêmica'],
         showAvatar: false,
-        socials: [{ network: 'linkedin', url: '#' }],
+        socials: [{ network: 'linkedin' as const, url: '#' }],
       },
     ]
 
@@ -74,13 +74,13 @@ export const FloatingSidebarWithTeamPanel: Story = {
         name: 'Beatriz Lima',
         title: ['Apoio e', 'QA'],
         showAvatar: false,
-        socials: [{ network: 'linkedin', url: '#' }],
+        socials: [{ network: 'linkedin' as const, url: '#' }],
       },
       {
         name: 'Lucas Pereira',
         title: ['Suporte', 'Técnico'],
         showAvatar: false,
-        socials: [{ network: 'linkedin', url: '#' }],
+        socials: [{ network: 'linkedin' as const, url: '#' }],
       },
     ]
 
