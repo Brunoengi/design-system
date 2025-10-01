@@ -5,12 +5,12 @@ import {
   Typography,
   Avatar,
 } from '@mui/material'
-import Sidebar from '@/components/surface/Sidebar/Sidebar'
-import Select from '@/components/input/Select/Select'
-import { InputGroup } from '@/components'
-import Button from '@/components/input/Button/Button'
-import Title from '@/components/dataDisplay/Title/Title'
-import Input from '@/components/input/Input/Input'
+import Sidebar from '../components/surface/Sidebar/Sidebar'
+import Select from '../components/input/Select/Select'
+import InputGroup  from '../components/input/InputGroup/InputGroup'
+import Button from '../components/input/Button/Button'
+import Title from '../components/dataDisplay/Title/Title'
+import Input from '../components/input/Input/Input'
 
 
 

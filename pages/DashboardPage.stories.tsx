@@ -12,13 +12,12 @@ import {
   alpha,
   Collapse,
 } from '@mui/material'
-import { Home, BarChart, Analytics } from '@mui/icons-material'
+import { Home, Analytics } from '@mui/icons-material'
 import AdbIcon from '@mui/icons-material/Adb'
 import MenuIcon from '@mui/icons-material/Menu'
-import ChevronRightIcon from '@mui/icons-material/ChevronRight'
 import Button from '../components/input/Button/Button'
-import TeamCard from '@/components/surface/TeamCard/TeamCard'
-import Sidebar from '@/components/surface/Sidebar/Sidebar'
+import TeamCard from '../components/surface/TeamCard/TeamCard'
+import Sidebar from '../components/surface/Sidebar/Sidebar'
 
 const meta: Meta = {
   title: 'Pages/Dashboard',

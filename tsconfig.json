@@ -12,6 +12,7 @@
     "jsx": "react-jsx", // Alterado para 'react-jsx' para compilação moderna do React
     "incremental": true, // Ótimo para builds mais rápidos
     "declaration": true, // Gera os arquivos .d.ts
+    "baseUrl": ".", // Adiciona a base para a resolução de caminhos
     "declarationDir": "dist", // Coloca os .d.ts em /dist
     "outDir": "dist", // Coloca os .js em /dist
     "noEmit": false, // Permitir a emissão de arquivos
@@ -19,6 +20,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": ["components", "pages", "styles", "lib", "next-env.d.ts"],
+  "exclude": ["node_modules", "dist", "**/*.stories.ts", "**/*.stories.tsx"]
 }
