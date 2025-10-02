@@ -18,6 +18,7 @@ const meta: Meta = {
   },
   // Como esta é uma página completa, não precisa dos decorators globais do Sidebar.
   decorators: [Story => <Story />],
+  tags: ["autodocs"]
 }
 
 export default meta

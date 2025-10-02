@@ -21,6 +21,7 @@ const meta: Meta = {
     layout: 'fullscreen',
   },
   decorators: [Story => <Story />],
+  tags: ["autodocs"]
 }
 
 export default meta

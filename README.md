@@ -21,17 +21,14 @@ This repository is a design system for web and desktop applications designed for
 
 <h3 id="component-list">2 - Component List</h3>
 
-| Atoms       | Molecules   | Organisms   | 
-| :---:       | :---:       | :---:       |
-| Avatar      | Disclosure  | Input Group |
-| Box         | Modal       |
-| Button      | Select      |
-| Divider     | Table
-| Input       | Popover
-| Math Text   |
-| Typography  |  
-| Chart       | 
-| SplitScreen | 
+| Data Display | Input       | Surface     | Other       |
+| :---:        | :---:       | :---:       | :---:       |
+| Avatar       | Button      | Box         | Chart       |
+| Divider      | Input       | Sidebar     | SplitScreen |
+| Math Text    | Input Group | Modal       |             |
+| Table        | Select      | Popover     |             |
+| Title        |             | Disclosure  |             |
+| Typography   |             |             |             |
 
 <h3 id="intallation">3 - Installation Instructions</h3>
 
@@ -113,11 +110,13 @@ import { Box, BoxProps } from "sosec-ds"
 import { Disclosure, DisclosureProps } from "sosec-ds"
 import { Divider, DividerProps } from "sosec-ds"
 import { Input, InputProps } from "sosec-ds"
-import { InputGroup, InputGroupProps } from "sosec-ds"
 import { Math, MathProps } from "sosec-ds"
 import { Modal, ModalProps } from "sosec-ds" 
 import { Select, SelectProps } from "sosec-ds"
 import { Typography, TypographyProps } from "sosec-ds" 
+import { Table, TableProps } from "sosec-ds"
+import { Title, TitleProps } from "sosec-ds"
+import { Sidebar, SidebarProps } from "sosec-ds"
+import { InputGroup, InputGroupProps } from "sosec-ds"
 
 ```
-
