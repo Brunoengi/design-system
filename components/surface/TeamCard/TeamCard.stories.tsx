@@ -2,7 +2,6 @@ import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
 import TeamCard from './TeamCard'
 import { PersonCardProps } from '../PersonCard/PersonCard'
-import Button from '@/components/input/Button/Button'
 import { Box } from '@mui/material'
 
 const meta: Meta<typeof TeamCard> = {
@@ -20,7 +19,7 @@ const meta: Meta<typeof TeamCard> = {
       options: ['0px', '4px', '8px', '16px', '32px'],
     },
     size: {
-      options: ['small', 'medium', 'large'],
+      options: ['xx-small', 'x-small', 'small', 'medium', 'large'],
       control: { type: 'radio' },
     },
     justifyMembers: {

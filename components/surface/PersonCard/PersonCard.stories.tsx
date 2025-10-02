@@ -29,7 +29,7 @@ const meta: Meta<typeof PersonCard> = {
       control: { type: 'range', min: 0, max: 24, step: 1 },
     },
     size: {
-      options: ['small', 'medium', 'large'],
+      options: ['xx-small', 'x-small', 'small', 'medium', 'large'],
       control: { type: 'radio' },
     },
     padding: {
@@ -161,14 +161,5 @@ export const WithCustomPadding: Story = {
     ...Default.args,
     padding: 0,
     name: 'No Padding',
-  },
-}
-
-export const WithCustomBackgroundColor: Story = {
-  name: 'Com Cor de Fundo Customizada',
-  args: {
-    ...Default.args,
-    backgroundColor: 'rgba(224, 247, 250, 0.8)',
-    name: 'Colored Card',
   },
 }

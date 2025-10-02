@@ -22,7 +22,7 @@ export type TeamCardProps = {
    * Define o tamanho geral do card e seus elementos internos.
    * @default 'medium'
    */
-  size?: 'small' | 'medium' | 'large'
+  size?: 'xx-small' | 'x-small' | 'small' | 'medium' | 'large'
   /**
    * Define o alinhamento horizontal dos membros da equipe.
    * @default 'flex-start'
@@ -56,6 +56,16 @@ export type TeamCardProps = {
 } & BoxProps
 
 const sizeStyles = {
+  'xx-small': {
+    titleVariant: 'subtitle1' as const,
+    gap: 1, // theme.spacing(1) = 8px
+    memberWidth: '150px',
+  },
+  'x-small': {
+    titleVariant: 'h6' as const,
+    gap: 1.5, // theme.spacing(1.5) = 12px
+    memberWidth: '160px',
+  },
   small: {
     titleVariant: 'h6' as const,
     gap: 2, // theme.spacing(2) = 16px

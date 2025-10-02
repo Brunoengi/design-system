@@ -40,7 +40,7 @@ export type PersonCardProps = {
    * Define o tamanho geral do card e seus elementos internos.
    * @default 'medium'
    */
-  size?: 'small' | 'medium' | 'large'
+  size?: 'xx-small' | 'x-small' | 'small' | 'medium' | 'large'
   /**
    * Permite substituir o preenchimento (padding) padrão do card.
    * O valor é um multiplicador do espaçamento do tema (ex: 2 = theme.spacing(2)).
@@ -65,6 +65,26 @@ const socialIconMap = {
 }
 
 const sizeStyles = {
+  'xx-small': {
+    avatar: { width: 40, height: 40 },
+    nameVariant: 'subtitle2' as const,
+    titleVariant: 'caption' as const,
+    contentPadding: 1,
+    titleMinHeight: '2.8rem',
+    avatarMarginBottom: 1,
+    titleContainerMarginBottom: 0.5,
+    socialsMarginTop: 1,
+  },
+  'x-small': {
+    avatar: { width: 50, height: 50 },
+    nameVariant: 'subtitle1' as const,
+    titleVariant: 'caption' as const,
+    contentPadding: 1.5,
+    titleMinHeight: '3.2rem',
+    avatarMarginBottom: 1.5,
+    titleContainerMarginBottom: 1,
+    socialsMarginTop: 1.5,
+  },
   small: {
     avatar: { width: 60, height: 60 },
     nameVariant: 'h6' as const,
