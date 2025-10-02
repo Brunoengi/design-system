@@ -12,3 +12,5 @@ export { default as Popover } from "./util/Popover/Popover";
 export { default as Sidebar } from "./surface/Sidebar/Sidebar";
 export { default as Title } from "./dataDisplay/Title/Title";
 export { default as Chart } from "./dataDisplay/Chart/Chart";
+export { default as PersonCard } from "./surface/PersonCard/PersonCard";
+export { default as TeamCard } from "./surface/TeamCard/TeamCard";

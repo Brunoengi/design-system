@@ -26,3 +26,7 @@ export { default as Title } from "./dataDisplay/Title/Title";
 export { type TitleProps } from "./dataDisplay/Title/Title";
 export { default as Chart } from "./dataDisplay/Chart/Chart";
 export { type ChartProps } from "./dataDisplay/Chart/Chart";
+export { default as PersonCard } from "./surface/PersonCard/PersonCard";
+export { type PersonCardProps } from "./surface/PersonCard/PersonCard";
+export { default as TeamCard } from "./surface/TeamCard/TeamCard";
+export { type TeamCardProps } from "./surface/TeamCard/TeamCard";
