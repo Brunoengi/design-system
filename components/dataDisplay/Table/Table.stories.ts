@@ -17,6 +17,9 @@ const meta: Meta<typeof Table> = {
       options: [5, 10, 25],
       control: { type: 'select' },
     },
+    showPaginationOnSinglePage: {
+      control: 'boolean',
+    },
   },
   tags: ['autodocs'],
 };
@@ -97,6 +100,7 @@ export const Empty: Story = {
   args: {
     columns,
     data: [],
+    initialRowsPerPage: 5,
     emptyMessage: 'Nenhum registro encontrado!',
   },
 };
@@ -108,5 +112,23 @@ export const WithIdColumn: Story = {
     data: dataWithId,
     initialRowsPerPage: 5,
     striped: true,
+  },
+};
+
+export const WithoutPagination: Story = {
+  name: 'Sem Paginação',
+  args: {
+    columns: columnsWithId,
+    data: dataWithId,
+  },
+};
+
+export const SinglePageWithPaginationShown: Story = {
+  name: 'Página Única com Paginação Visível',
+  args: {
+    ...Default.args,
+    data: data.slice(0, 4), // Menos itens que rowsPerPage
+    initialRowsPerPage: 5,
+    showPaginationOnSinglePage: true,
   },
 };

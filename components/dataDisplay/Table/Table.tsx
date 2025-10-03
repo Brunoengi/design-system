@@ -108,6 +108,10 @@ export type TableProps = {
   striped?: boolean;
   stickyHeader?: boolean;
   initialRowsPerPage?: 5 | 10 | 25;
+  /**
+   * Se `true`, exibe a paginação mesmo que todos os itens caibam em uma única página.
+   */
+  showPaginationOnSinglePage?: boolean;
 };
 
 export function Table({
@@ -117,12 +121,13 @@ export function Table({
   size = 'medium',
   striped = false,
   stickyHeader = false,
-  initialRowsPerPage = 5,
+  initialRowsPerPage,
+  showPaginationOnSinglePage = false,
 }: TableProps) {
   const [order, setOrder] = useState<Order>('asc');
   const [orderBy, setOrderBy] = useState<string>(columns[0]?.id || '');
   const [page, setPage] = useState(0);
-  const [rowsPerPage, setRowsPerPage] = useState<number>(initialRowsPerPage);
+  const [rowsPerPage, setRowsPerPage] = useState<number>(initialRowsPerPage ?? data.length);
 
   const handleRequestSort = (
     event: React.MouseEvent<unknown>,
@@ -145,12 +150,14 @@ export function Table({
   };
 
   const visibleRows = useMemo(
-    () =>
-      stableSort(data, getComparator(order, orderBy)).slice(
+    () => {
+      const sortedData = stableSort(data, getComparator(order, orderBy));
+      if (!initialRowsPerPage) return sortedData;
+      return sortedData.slice(
         page * rowsPerPage,
         page * rowsPerPage + rowsPerPage,
-      ),
-    [data, order, orderBy, page, rowsPerPage],
+      );
+    }, [data, order, orderBy, page, rowsPerPage, initialRowsPerPage],
   );
 
   return (
@@ -192,15 +199,17 @@ export function Table({
           </TableBody>
         </MuiTable>
       </TableContainer>
-      <TablePagination
-        rowsPerPageOptions={[5, 10, 25]}
-        component="div"
-        count={data.length}
-        rowsPerPage={rowsPerPage}
-        page={page}
-        onPageChange={handleChangePage}
-        onRowsPerPageChange={handleChangeRowsPerPage}
-      />
+      {initialRowsPerPage && (data.length > rowsPerPage || showPaginationOnSinglePage) && (
+        <TablePagination
+          rowsPerPageOptions={[5, 10, 25]}
+          component="div"
+          count={data.length}
+          rowsPerPage={rowsPerPage}
+          page={page}
+          onPageChange={handleChangePage}
+          onRowsPerPageChange={handleChangeRowsPerPage}
+        />
+      )}
     </Paper>
   );
 }
