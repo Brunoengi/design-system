@@ -23,7 +23,7 @@ export type PersonCardProps = {
      * Define o tamanho geral do card e seus elementos internos.
      * @default 'medium'
      */
-    size?: 'small' | 'medium' | 'large';
+    size?: 'xx-small' | 'x-small' | 'small' | 'medium' | 'large';
     /**
      * Permite substituir o preenchimento (padding) padrão do card.
      * O valor é um multiplicador do espaçamento do tema (ex: 2 = theme.spacing(2)).

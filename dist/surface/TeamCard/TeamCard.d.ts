@@ -19,7 +19,7 @@ export type TeamCardProps = {
      * Define o tamanho geral do card e seus elementos internos.
      * @default 'medium'
      */
-    size?: 'small' | 'medium' | 'large';
+    size?: 'xx-small' | 'x-small' | 'small' | 'medium' | 'large';
     /**
      * Define o alinhamento horizontal dos membros da equipe.
      * @default 'flex-start'

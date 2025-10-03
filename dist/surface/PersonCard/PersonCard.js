@@ -43,6 +43,26 @@ var socialIconMap = {
     website: _jsx(LanguageIcon, {}),
 };
 var sizeStyles = {
+    'xx-small': {
+        avatar: { width: 40, height: 40 },
+        nameVariant: 'subtitle2',
+        titleVariant: 'caption',
+        contentPadding: 1,
+        titleMinHeight: '2.8rem',
+        avatarMarginBottom: 1,
+        titleContainerMarginBottom: 0.5,
+        socialsMarginTop: 1,
+    },
+    'x-small': {
+        avatar: { width: 50, height: 50 },
+        nameVariant: 'subtitle1',
+        titleVariant: 'caption',
+        contentPadding: 1.5,
+        titleMinHeight: '3.2rem',
+        avatarMarginBottom: 1.5,
+        titleContainerMarginBottom: 1,
+        socialsMarginTop: 1.5,
+    },
     small: {
         avatar: { width: 60, height: 60 },
         nameVariant: 'h6',

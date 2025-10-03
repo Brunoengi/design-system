@@ -33,6 +33,16 @@ import { jsx as _jsx } from "react/jsx-runtime";
 import PersonCard from '../PersonCard/PersonCard';
 import { Box } from '@mui/material';
 var sizeStyles = {
+    'xx-small': {
+        titleVariant: 'subtitle1',
+        gap: 1, // theme.spacing(1) = 8px
+        memberWidth: '150px',
+    },
+    'x-small': {
+        titleVariant: 'h6',
+        gap: 1.5, // theme.spacing(1.5) = 12px
+        memberWidth: '160px',
+    },
     small: {
         titleVariant: 'h6',
         gap: 2, // theme.spacing(2) = 16px

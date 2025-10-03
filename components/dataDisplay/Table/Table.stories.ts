@@ -18,6 +18,7 @@ const meta: Meta<typeof Table> = {
       control: { type: 'select' },
     },
   },
+  tags: ['autodocs'],
 };
 
 export default meta;
