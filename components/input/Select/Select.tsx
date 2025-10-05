@@ -32,7 +32,7 @@ export function isOptionGroup(
 
 // Novas props baseadas no Material-UI
 export interface SelectProps {
-  label?: string
+  label?: React.ReactNode
   options: (SelectOption | SelectOptionGroup)[]
   value: string | number
   onChange: (event: SelectChangeEvent<string | number>) => void
@@ -126,7 +126,7 @@ const Select = forwardRef<HTMLDivElement, SelectProps>(
           name={name}
           value={value}
           onChange={onChange}
-          label={label}
+          label={typeof label === "string" ? label : undefined}
         >
           {renderOptions()}
         </MuiSelect>
