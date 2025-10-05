@@ -30,6 +30,12 @@ export function isOptionGroup(
   return "options" in option
 }
 
+export interface RenderOptionProps {
+  key: string | number;
+  value: string | number;
+  disabled?: boolean;
+}
+
 // Novas props baseadas no Material-UI
 export interface SelectProps {
   label?: React.ReactNode
@@ -49,6 +55,13 @@ export interface SelectProps {
    * The system prop that allows defining system overrides as well as custom CSS.
    */
   sx?: SxProps<Theme>
+  /**
+   * Função para customizar a renderização de cada opção na lista suspensa.
+   * Recebe as propriedades do `MenuItem` e o objeto da opção.
+   * @param props - Propriedades essenciais (`key`, `value`, `disabled`) a serem aplicadas no `MenuItem`.
+   * @param option - O objeto da opção a ser renderizada.
+   */
+  renderOption?: (props: RenderOptionProps, option: SelectOption) => React.ReactNode;
 }
 
 const Select = forwardRef<HTMLDivElement, SelectProps>(
@@ -68,6 +81,7 @@ const Select = forwardRef<HTMLDivElement, SelectProps>(
       size = "medium",
       className,
       sx,
+      renderOption,
     },
     ref,
   ) => {
@@ -83,26 +97,31 @@ const Select = forwardRef<HTMLDivElement, SelectProps>(
             </ListSubheader>,
           )
           item.options.forEach(option => {
-            elements.push(
-              <MenuItem
-                key={option.value}
-                value={option.value}
-                disabled={option.disabled}
-              >
-                {option.label}
-              </MenuItem>,
-            )
+            const props: RenderOptionProps = {
+              key: option.value,
+              value: option.value,
+              disabled: option.disabled,
+            };
+            if (renderOption) {
+              elements.push(renderOption(props, option));
+            } else {
+              elements.push(<MenuItem {...props}>{option.label}</MenuItem>);
+            }
           })
         } else {
-          elements.push(
-            <MenuItem
-              key={item.value}
-              value={item.value}
-              disabled={item.disabled}
-            >
-              {item.label}
-            </MenuItem>,
-          )
+          const option = item as SelectOption;
+          const props: RenderOptionProps = {
+            key: option.value,
+            value: option.value,
+            disabled: option.disabled,
+          };
+
+          if (renderOption) {
+            // Passa as props do MenuItem e o objeto da opção para a função customizada
+            elements.push(renderOption(props, option));
+          } else {
+            elements.push(<MenuItem {...props}>{option.label}</MenuItem>);
+          }
         }
       })
       return elements
@@ -126,7 +145,7 @@ const Select = forwardRef<HTMLDivElement, SelectProps>(
           name={name}
           value={value}
           onChange={onChange}
-          label={typeof label === "string" ? label : undefined}
+          label={label}
         >
           {renderOptions()}
         </MuiSelect>
