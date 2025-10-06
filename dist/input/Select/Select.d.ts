@@ -2,7 +2,7 @@ import React from "react";
 import { SelectChangeEvent, SxProps, Theme } from "@mui/material";
 export interface SelectOption {
     value: string | number;
-    label: string;
+    label: React.ReactNode;
     disabled?: boolean;
 }
 export interface SelectOptionGroup {

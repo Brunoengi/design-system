@@ -99,6 +99,20 @@ export const Default: Story = {
   render: SelectTemplate,
 }
 
+export const WithComplexLabel: Story = {
+  name: "Com Label Complexo",
+  args: {
+    label: (
+      <>
+        f<sub>ck</sub>
+      </>
+    ),
+    options: simpleOptions,
+    id: "complex-label-select",
+  },
+  render: SelectTemplate,
+}
+
 export const WithOptgroup: Story = {
   name: "Com Grupos (optgroup)",
   args: {

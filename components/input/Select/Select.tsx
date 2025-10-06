@@ -14,7 +14,7 @@ import {
 // Define a estrutura de uma opção e de um grupo de opções
 export interface SelectOption {
   value: string | number
-  label: string
+  label: React.ReactNode
   disabled?: boolean
 }
 
