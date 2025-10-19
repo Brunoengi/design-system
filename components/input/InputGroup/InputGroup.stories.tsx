@@ -53,6 +53,17 @@ const meta: Meta<typeof InputGroup> = {
 export default meta;
 type Story = StoryObj<typeof InputGroup>;
 
+export const Primary: Story = {
+  name: 'Default',
+  render: (args) => (
+    <Box width={250}>
+      <InputGroup {...args}>
+        <Input label="Nome" />
+        <Input label="Sobrenome" />
+      </InputGroup>
+    </Box>
+  ),
+};
 export const Sizes: Story = {
   name: 'Tamanhos',
   render: () => (
