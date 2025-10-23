@@ -21,8 +21,8 @@ export type SocialLink = {
 
 // Define as props para o componente PersonCard
 export type PersonCardProps = {
-  name: string
-  title: string[]
+  name?: string
+  title?: string[]
   avatarUrl?: string
   socials?: SocialLink[]
   /**
@@ -120,6 +120,7 @@ const sizeStyles = {
 const PersonCard = ({
   name,
   title,
+
   avatarUrl,
   socials = [],
   showAvatar = true,
@@ -151,12 +152,16 @@ const PersonCard = ({
         {showAvatar && (
           <Avatar alt={name} src={avatarUrl} sx={{ ...styles.avatar, mb: styles.avatarMarginBottom }} />
         )}
-        <Typography variant={styles.nameVariant} component="div">{name}</Typography>
-        <Box sx={{ minHeight: styles.titleMinHeight, display: 'flex', flexDirection: 'column', justifyContent: 'center', mb: styles.titleContainerMarginBottom }}>
-          {title.slice(0, 3).map((t, index) => (
-            <Typography key={index} color="text.secondary" variant={styles.titleVariant}>{t}</Typography>
-          ))}
-        </Box>
+        {name && (
+          <Typography variant={styles.nameVariant} component="div">{name}</Typography>
+        )}
+        {title && title.length > 0 && (
+          <Box sx={{ minHeight: styles.titleMinHeight, display: 'flex', flexDirection: 'column', justifyContent: 'center', mb: styles.titleContainerMarginBottom }}>
+            {title.slice(0, 3).map((t, index) => (
+              <Typography key={index} color="text.secondary" variant={styles.titleVariant}>{t}</Typography>
+            ))}
+          </Box>
+        )}
         {socials.length > 0 && (
           <Box sx={{ mt: styles.socialsMarginTop }}>
             {socials.map(social => (
