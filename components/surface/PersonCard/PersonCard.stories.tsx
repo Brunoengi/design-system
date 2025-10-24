@@ -71,6 +71,20 @@ export const AllSocials: Story = {
       { network: 'github', url: 'https://github.com' },
       { network: 'twitter', url: 'https://twitter.com' },
       { network: 'website', url: 'https://example.com' },
+      { network: 'youtube', url: 'https://youtube.com' },
+    ],
+  },
+}
+
+export const WithYouTube: Story = {
+  name: 'Com Link do YouTube',
+  args: {
+    name: 'Criador de Conteúdo',
+    title: ['YouTuber', 'Influencer'],
+    avatarUrl: 'https://i.pravatar.cc/150?u=youtuber',
+    socials: [
+      { network: 'youtube', url: 'https://youtube.com' },
+      { network: 'twitter', url: 'https://twitter.com' },
     ],
   },
 }
