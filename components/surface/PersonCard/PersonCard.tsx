@@ -12,10 +12,11 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import TwitterIcon from '@mui/icons-material/Twitter'
 import LanguageIcon from '@mui/icons-material/Language'
+import YouTubeIcon from '@mui/icons-material/YouTube'
 
 // Define o formato de um link de rede social
 export type SocialLink = {
-  network: 'linkedin' | 'github' | 'twitter' | 'website'
+  network: 'linkedin' | 'github' | 'twitter' | 'website' | 'youtube'
   url: string
 }
 
@@ -62,6 +63,7 @@ const socialIconMap = {
   github: <GitHubIcon />,
   twitter: <TwitterIcon />,
   website: <LanguageIcon />,
+  youtube: <YouTubeIcon />,
 }
 
 const sizeStyles = {

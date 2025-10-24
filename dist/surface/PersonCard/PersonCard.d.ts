@@ -1,6 +1,6 @@
 import { CardProps } from '@mui/material';
 export type SocialLink = {
-    network: 'linkedin' | 'github' | 'twitter' | 'website';
+    network: 'linkedin' | 'github' | 'twitter' | 'website' | 'youtube';
     url: string;
 };
 export type PersonCardProps = {

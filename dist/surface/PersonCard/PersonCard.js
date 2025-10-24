@@ -35,12 +35,14 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import LanguageIcon from '@mui/icons-material/Language';
+import YouTubeIcon from '@mui/icons-material/YouTube';
 // Mapeia o nome da rede para o componente de ícone correspondente
 var socialIconMap = {
     linkedin: _jsx(LinkedInIcon, {}),
     github: _jsx(GitHubIcon, {}),
     twitter: _jsx(TwitterIcon, {}),
     website: _jsx(LanguageIcon, {}),
+    youtube: _jsx(YouTubeIcon, {}),
 };
 var sizeStyles = {
     'xx-small': {
