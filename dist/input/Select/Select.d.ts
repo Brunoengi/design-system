@@ -34,6 +34,10 @@ export interface SelectProps {
      */
     sx?: SxProps<Theme>;
     /**
+     * The system prop that allows defining system overrides as well as custom CSS for the inner MuiSelect component.
+     */
+    selectSx?: SxProps<Theme>;
+    /**
      * Função para customizar a renderização de cada opção na lista suspensa.
      * Recebe as propriedades do `MenuItem` e o objeto da opção.
      * @param props - Propriedades essenciais (`key`, `value`, `disabled`) a serem aplicadas no `MenuItem`.

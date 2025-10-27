@@ -17,7 +17,7 @@ export function isOptionGroup(option) {
     return "options" in option;
 }
 var Select = forwardRef(function (_a, ref) {
-    var label = _a.label, options = _a.options, value = _a.value, onChange = _a.onChange, name = _a.name, id = _a.id, _b = _a.disabled, disabled = _b === void 0 ? false : _b, _c = _a.error, error = _c === void 0 ? false : _c, helperText = _a.helperText, _d = _a.fullWidth, fullWidth = _d === void 0 ? true : _d, _e = _a.variant, variant = _e === void 0 ? "outlined" : _e, _f = _a.size, size = _f === void 0 ? "medium" : _f, className = _a.className, sx = _a.sx, renderOption = _a.renderOption;
+    var label = _a.label, options = _a.options, value = _a.value, onChange = _a.onChange, name = _a.name, id = _a.id, _b = _a.disabled, disabled = _b === void 0 ? false : _b, _c = _a.error, error = _c === void 0 ? false : _c, helperText = _a.helperText, _d = _a.fullWidth, fullWidth = _d === void 0 ? true : _d, _e = _a.variant, variant = _e === void 0 ? "outlined" : _e, _f = _a.size, size = _f === void 0 ? "medium" : _f, className = _a.className, sx = _a.sx, selectSx = _a.selectSx, renderOption = _a.renderOption;
     var labelId = label ? "".concat(id, "-label") : undefined;
     var renderOptions = function () {
         var elements = [];
@@ -56,7 +56,7 @@ var Select = forwardRef(function (_a, ref) {
         });
         return elements;
     };
-    return (_jsxs(FormControl, { variant: variant, fullWidth: fullWidth, disabled: disabled, error: error, size: size, className: className, sx: sx, ref: ref, children: [label && _jsx(InputLabel, { id: labelId, children: label }), _jsx(MuiSelect, { labelId: labelId, id: id, name: name, value: value, onChange: onChange, label: label, children: renderOptions() }), helperText && _jsx(FormHelperText, { children: helperText })] }));
+    return (_jsxs(FormControl, { variant: variant, fullWidth: fullWidth, disabled: disabled, error: error, size: size, className: className, sx: sx, ref: ref, children: [label && _jsx(InputLabel, { id: labelId, children: label }), _jsx(MuiSelect, { labelId: labelId, id: id, name: name, value: value, onChange: onChange, label: label, sx: selectSx, children: renderOptions() }), helperText && _jsx(FormHelperText, { children: helperText })] }));
 });
 Select.displayName = "Select";
 export default Select;

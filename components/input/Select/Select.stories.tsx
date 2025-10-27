@@ -54,6 +54,7 @@ const meta: Meta<typeof Select> = {
     value: { control: false },
     onChange: { control: false },
     options: { control: false },
+    selectSx: { control: 'object', description: 'Estilos customizados para o componente MuiSelect interno.' },
   },
   args: {
     label: "Categoria",
@@ -144,3 +145,16 @@ export const Disabled: Story = {
   },
   render: SelectTemplate,
 }
+
+export const WithCustomFontSize: Story = {
+  name: "Com Tamanho de Fonte Customizado",
+  args: {
+    options: simpleOptions,
+    id: "custom-font-size-select",
+    selectSx: {
+      fontSize: '1.2rem', // Aplica um tamanho de fonte customizado ao MuiSelect
+    },
+  },
+  render: SelectTemplate,
+}
+
